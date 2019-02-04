@@ -1,25 +1,42 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { makeACall, connectToSocketServer } from '../actions/example'
+import { getCategories } from '../actions/listActions';
+import { Link } from 'react-router-dom'
+
+
 
 class Home extends Component {
   componentDidMount() {
-    makeACall()
+    getCategories()
   }
   
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <p>{this.props.example}</p>
+      <div className='superCon'>
+        <div className="mainCon" >
+          <div className="appTitle"><h2 className="CropTradeApp">Crop Trade App</h2></div>
+          <div id="catCon">
+            {this.props.categories.map(items=> (
+            <div key={items.id}>
+            <Link to={`/posts/${items.slug}/${items.id}`}> <h3 className="catName">{items.name}</h3></Link>
+              <div>{items.subcat.map(allsubs => (
+                <Link key={allsubs.id} to={`/${allsubs.slug}/${allsubs.id}`}> <div className="allsubs">{allsubs.name}</div> </Link>
+              ))}
+              </div>
+            </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     )
   }
 }
 
 function mapStateToProps(appState) {
+  console.log(appState)
   return {
-    example: appState.exampleReducer.example
+   categories: appState.listingsReducer.categories
   }
 }
 

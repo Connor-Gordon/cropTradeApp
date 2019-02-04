@@ -1,0 +1,65 @@
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+a{
+    text-decoration-color: grey;
+}
+#catCon{
+    height:900px;
+    padding-left: 15px;
+    margin-right: -50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.lvTitle{
+    margin: auto;
+    width:800px;
+    height: 45px;
+    text-align: center;
+    background: rgb(229, 229, 230);
+    border-bottom:1px solid gray;
+    border-top: 1px solid gray;
+    
+}
+
+.lasvegas{
+    margin-top:9px;
+}
+.superCon{
+    width: 1300px;
+    margin: auto;
+    display: flex;
+
+}
+.mainCon{
+    width:900px;
+   
+}
+.leftColumn{
+    width: 200px;
+    background: rgb(229, 229, 230);
+    text-align: center;
+    border-right: 1px solid gray;
+    border-left:1px solid gray;
+}
+.rightColumn{
+    width: 200px;
+    background: rgb(229, 229, 230);
+    text-align: center;
+    border-right: 1px solid gray;
+    border-left:1px solid gray;
+}
+
+.catName{
+    width: 100px;
+    height: 22px;
+    font-size: 20px;
+    background: rgb(229, 229, 230);
+    text-align: center;
+}
+
+p{
+    color:rgb(32, 32, 190)
+}

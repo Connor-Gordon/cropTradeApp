@@ -1,8 +1,8 @@
 {
   "db": {
     "host": "localhost",
-    "user": "",
+    "user": "farmer",
     "password": "",
-    "database": ""
+    "database": "CropTradeApp"
   }
 }

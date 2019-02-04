@@ -1,0 +1,27 @@
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+.postCon{
+    width: 700px;
+    margin: auto;
+}
+.prevnextCon{
+    width: 100px;
+    margin: auto;
+    padding: 5px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.replybutton{
+    margin-bottom: 10px;
+    background: rgb(236, 168, 179);
+    border: 1px solid rgb(240, 111, 133);
+    color: rgb(68, 65, 65);
+}
+
+.photo{
+    width:350px;
+}

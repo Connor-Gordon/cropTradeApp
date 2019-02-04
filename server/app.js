@@ -1,13 +1,12 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import Router from './routes/example'
 
 const app = express()
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.use('/api', Router)
+app.use('/api', require('./routes'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

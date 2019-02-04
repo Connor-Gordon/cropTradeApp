@@ -1,0 +1,77 @@
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+li{
+    list-style: none;
+    height: 25px;
+}
+
+.bodyCon{
+    width: 700px;
+    margin:auto;
+}
+
+.prevnext{
+    width: 200px;
+    margin: auto;
+    padding: 5px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+p{
+    margin:0;
+
+}
+
+.pages{
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.topbar{
+    display: flex;
+}
+
+.listsearchbar{
+    width: 700px;
+    margin: auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-style: 25px;
+}
+
+.catname{
+    color: rgb(35, 35, 189);
+    width: 150px;
+}
+
+.listleftCon{
+    width: 170px;
+    padding-left:10px;
+}
+
+.zipCon{
+    display: flex;
+    
+}
+
+.zip{
+    width: 60px;
+}
+
+.miles{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.listCon{
+    display: flex;
+}
