@@ -4,6 +4,8 @@ import { getPost } from '../actions/listActions';
 
 import '../styles/postStyles.css'
 
+import Footer from './Footer'
+
 
 class Post extends Component {
   componentDidMount() {
@@ -20,6 +22,7 @@ class Post extends Component {
             <div>{this.props.post.description}</div>
             <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
           </div>
+
         </div>
       </div>
     )

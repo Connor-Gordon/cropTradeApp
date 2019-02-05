@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getCategories } from '../actions/listActions';
 import { Link } from 'react-router-dom'
-
 import '../styles/homeStyles.css'
+
+import Footer from './Footer'
+
 
 class Home extends Component {
   componentDidMount() {
@@ -32,7 +34,9 @@ class Home extends Component {
           </div>
 
         </div>
-
+        <div>
+          <Footer />
+        </div>
       </div>
     )
   }
