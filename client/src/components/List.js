@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 import '../styles/listStyles.css'
 
+import Footer from './Footer'
+
 class List extends Component {
   componentDidMount() {
     getPosts(this.props.match.params.slug, this.props.match.params.id)
@@ -28,6 +30,9 @@ class List extends Component {
                     <li key={item.id}> <Link to={`/post/${item.id}`}>{item.title} (Las Vegas) </Link> </li>
                 ))}
             </ul>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     )

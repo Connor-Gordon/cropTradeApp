@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+#contactTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#contactUs {
+    display: flex;
+}
