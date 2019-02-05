@@ -23,8 +23,7 @@ class App extends Component {
               <Route  path="/post/:id"  component={Post} />
               <Route  path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
-              <Route  path="/:slug/:id"  component={List} />
-              
+              <Route  path="/:slug/:id"  component={List} /> 
             </Switch>
           </div>
         </Router>
