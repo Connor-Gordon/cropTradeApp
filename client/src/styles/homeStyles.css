@@ -6,20 +6,17 @@ a{
 }
 #catCon{
     width:900px;
-    height: 800px;
+    height: 900px;
     padding-top: 85px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: double rgb(31, 100, 18);
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/92/17/2857e240b74eb0f.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 .appTitle{
     padding-top: 1px;
-    width: 900px;
+    width: 895px;
     height: 60px;
     text-align: center;
     color: rgb(232, 240, 204);
@@ -40,6 +37,10 @@ a{
 .mainCon{
     width:900px;
     margin: auto;
+    border: double rgb(31, 100, 18);
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/92/17/2857e240b74eb0f.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
    
 }
 
@@ -47,9 +48,9 @@ a{
 
 .catName{
     width: 130px;
-    height: 24px;
-    font-size: 22px;
-    background: rgba(238, 229, 164, 0.7);
+    height: 25px;
+    font-size: 23px;
+    background: rgba(238, 229, 164, .5);
     color: rgb(82, 110, 6);
     text-align: center;
     border-radius: 15px;
@@ -58,11 +59,22 @@ a{
 
 .subname{
     color:rgb(151, 84, 6);
-    font-size: 17px;
+    font-size: 19px;
     font-weight: bold;
 }
 
 
 .catdiv{
     margin: auto;
+}
+
+.footer{
+    margin-top: 10px;
+    background-color: rgba(116, 112, 112, 0.8);
+}
+
+.CropTradeApp{
+    font-size: 35px;
+    margin: 0;
+    padding-top: 10px;
 }

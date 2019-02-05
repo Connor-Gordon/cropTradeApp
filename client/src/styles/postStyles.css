@@ -4,7 +4,7 @@ html {box-sizing: border-box;}
 .postmainCon{
     width: 800px;
     margin: auto;
-    padding: 10px;
+    padding-top: 10px;
     border: double grey;
     background-image: url(https://image.freepik.com/free-photo/abstract-color-clouds-sky-pastel-color-creative-colorful-color-background-abstract-gradation-color-pastel_6529-44.jpg);
     background-repeat: no-repeat;

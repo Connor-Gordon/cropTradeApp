@@ -7,6 +7,7 @@ import '../styles/homeStyles.css'
 import Footer from './Footer'
 
 
+
 class Home extends Component {
   componentDidMount() {
     getCategories()
@@ -32,10 +33,7 @@ class Home extends Component {
             </div>
             ))}
           </div>
-
-        </div>
-        <div>
-          <Footer />
+        <Footer /> 
         </div>
       </div>
     )
@@ -43,7 +41,7 @@ class Home extends Component {
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
+ 
   return {
    categories: appState.listingsReducer.categories
   }

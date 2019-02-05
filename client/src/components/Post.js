@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { getPost } from '../actions/listActions';
 
 import '../styles/postStyles.css'
-
 import Footer from './Footer'
+
 
 
 class Post extends Component {
@@ -22,7 +22,7 @@ class Post extends Component {
             <div>{this.props.post.description}</div>
             <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
           </div>
-
+          <Footer /> 
         </div>
       </div>
     )
@@ -30,7 +30,7 @@ class Post extends Component {
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
+  
   return {
    post: appState.listingsReducer.post
   }

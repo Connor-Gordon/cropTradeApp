@@ -4,8 +4,8 @@ import { getPosts } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 
 import '../styles/listStyles.css'
-
 import Footer from './Footer'
+
 
 class List extends Component {
   componentDidMount() {
@@ -34,7 +34,7 @@ class List extends Component {
           </div>
         </div>
         <div>
-          <Footer />
+        <Footer /> 
         </div>
       </div>
     )
