@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 
 import '../styles/footerStyles.css'
-import footer from './Footer'
+import Footer from './Footer'
 
 
 

@@ -8,6 +8,7 @@ import List from './List'
 import Post from './Post'
 import Scat from './Singlecat'
 import Form from './Form'
+import About from './About'
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
               <Route  path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route  path="/:slug/:id"  component={List} /> 
+              <Route path="/about" component={About} />
             </Switch>
           </div>
         </Router>
