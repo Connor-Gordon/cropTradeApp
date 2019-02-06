@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 
-import '../styles/footerStyles.css'
+import '../styles/aboutStyles.css'
 import Footer from './Footer'
 
 

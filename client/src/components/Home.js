@@ -4,6 +4,7 @@ import { getCategories } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 
 import Footer from './Footer'
+import '../styles/homeStyles.css'
 
 class Home extends Component {
   componentDidMount() {

@@ -1,0 +1,6 @@
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+.aboutUs{
+    background-image: url(https://media.istockphoto.com/vectors/abstract-vector-background-blue-and-green-transparent-waved-lines-for-vector-id922527040)
+}
