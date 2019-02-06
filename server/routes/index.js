@@ -9,7 +9,6 @@ Router.get('/categories', (req, res, next) => {
   let data = {
     title: 'Home'
   }
-
   conn.query(sql, (err, results, fields) => {
     data.categories = results.filter(result => result.parent_id === null)
     data.categories.map(cat => {
@@ -72,6 +71,15 @@ Router.get('/:posts/:id', (req, res, next) =>{
   })
 })
 
+//search bar
+Router.get('/search/:results', (req, res, next) =>{
+  let searchResults = req.params.searchResults
+  const sql = `SELECT * FROM posts WHERE description LIKE '%?%' OR title LIKE '%?%'`
+
+  conn.query (sql, [searchResults], (err, results, fields)=>{
+    res.json(results)
+  })
+})
 
 
 

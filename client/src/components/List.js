@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 
 import '../styles/listStyles.css'
 
-import Footer from './Footer'
-
 class List extends Component {
   componentDidMount() {
     getPosts(this.props.match.params.slug, this.props.match.params.id)
@@ -18,7 +16,6 @@ class List extends Component {
         <h1>Crop Trade App</h1>
         <h1 className="catname">{this.props.match.params.slug}</h1> 
         <div className="bodyCon">
-            <input className="listsearchbar" type="text" name="searchbar" placeholder="search" />
             
                 <div className="addpostButton"> 
                     <Link to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add Post</Link>
@@ -32,7 +29,6 @@ class List extends Component {
             </ul>
         </div>
         <div>
-          <Footer />
         </div>
       </div>
     )
