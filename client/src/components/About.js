@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 
+
 import '../styles/aboutStyles.css'
 import Footer from './Footer'
+
+import '../styles/footerStyles.css'
+
+
 
 
 
@@ -37,7 +42,7 @@ class About extends Component {
             </div>
         </div>
         <div>
-          <Footer />
+          
         </div>
       </div>
     )

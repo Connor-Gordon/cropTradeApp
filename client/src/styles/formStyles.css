@@ -4,21 +4,22 @@ form{
     border:1px solid grey;
     border-radius: 5px;
     padding:20px;
+    background-color: rgb(247, 244, 217);
    }
    
    
    
-   .textarea{
+.textarea{
        width:450px;
        margin-top: 10px;
        height: 200px;
    }
-   .image{
+.image{
        margin-bottom: 10px;
        width:450px;
    }
    
-   .formtitle{
+ .formtitle{
        width:450px;
    }
    
