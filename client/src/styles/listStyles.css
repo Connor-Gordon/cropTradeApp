@@ -6,32 +6,18 @@ li{
     height: 25px;
 }
 
+.listCon{
+    margin:auto;
+    width: 700px;
+   background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+    border-radius: 10px;
+
+}
 .bodyCon{
     width: 700px;
     margin:auto;
-}
-
-.prevnext{
-    width: 200px;
-    margin: auto;
-    padding: 5px;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-
-p{
-    margin:0;
-
-}
-
-.pages{
-    border-right: 1px solid grey;
-    border-left: 1px solid grey;
-    padding-right: 5px;
-    padding-left: 5px;
 }
 
 .topbar{
@@ -49,29 +35,22 @@ p{
 }
 
 .catname{
-    color: rgb(35, 35, 189);
+    text-transform: capitalize;
+    color: rgb(82, 110, 6);
     width: 150px;
 }
 
-.listleftCon{
-    width: 170px;
-    padding-left:10px;
+h1{
+    color:rgb(151, 84, 6)
 }
 
-.zipCon{
-    display: flex;
-    
+.postLi{
+    color:grey;
 }
 
-.zip{
-    width: 60px;
+.postLi:hover{
+    font-size: 18px;
+    color: rgb(82, 77, 77)
 }
 
-.miles{
-    width: 40px;
-    margin-right: 10px;
-}
 
-.listCon{
-    display: flex;
-}

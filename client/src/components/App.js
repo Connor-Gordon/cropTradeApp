@@ -3,6 +3,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import store from '../store'
 
+
+
 import Home from './Home'
 import List from './List'
 import Post from './Post'
@@ -21,12 +23,14 @@ class App extends Component {
             <Switch>
               
               <Route exact path="/"  component={Home} />
+              <Route path="/about" component={About} />
               <Route  path="/post/:id"  component={Post} />
               <Route  path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route  path="/:slug/:id"  component={List} /> 
-              <Route path="/about" component={About} />
+              
             </Switch>
+            
           </div>
         </Router>
       </Provider>
