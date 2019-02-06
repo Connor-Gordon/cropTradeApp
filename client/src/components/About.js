@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 
 import '../styles/footerStyles.css'
 
-
-
 class About extends Component {
   
   render() {

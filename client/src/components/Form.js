@@ -69,7 +69,7 @@ class Form extends Component {
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
+  
   return {
    form: appState.listingsReducer.form
   }

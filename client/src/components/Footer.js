@@ -14,24 +14,24 @@ class Footer extends Component {
       <div className='footer'>
         <div id="navLinks">
             <ul>
-                <li><Link to={'/'}>Home</Link></li>
-                <li><Link to={"/About"}>About</Link></li>
-                <li><Link to={'/Profile'}>Profile</Link></li>
-                <li><Link to={'/Settings'}>Settings</Link></li>
+                <li><Link className="navName" to={'/'}>Home</Link></li>
+                <li><Link className="navName" to={"/About"}>About</Link></li>
+                <li><Link className="navName" to={'/Profile'}>Profile</Link></li>
+                <li><Link className="navName" to={'/Settings'}>Settings</Link></li>
             </ul>
         </div>
         <div>
             <h3 id="contactTitle">Contact Us</h3>
             <div id="contactUs">
                 <ul>
-                    <li>Connor Gordon</li>
-                    <li>702-279-8978</li>
-                    <li>con.gordon@gmail.com</li>
+                    <li className="contactName">Connor Gordon</li>
+                    <li className="contactNum">702-279-8978</li>
+                    <li className="contactNum">con.gordon@gmail.com</li>
                 </ul>
                 <ul>
-                    <li>Sucely Chavarria</li>
-                    <li>702-555-5555</li>
-                    <li>placeholderemail@gmail.com</li>
+                    <li className="contactName">Sucely Chavarria</li>
+                    <li className="contactNum">818-720-4538</li>
+                    <li className="contactNum">sucely.c07@gmail.com</li>
                 </ul>
             </div>
         </div>

@@ -21,6 +21,7 @@ class Post extends Component {
             ))}
             </div>
         </div>
+        <Footer />
       </div>
     )
   }

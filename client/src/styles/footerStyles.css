@@ -7,8 +7,29 @@
     font-weight: bold;
     text-decoration: underline;
     text-align: center;
+    font-size: 21px;
+    color:rgb(202, 200, 200);
 }
 
 #contactUs {
     display: flex;
+}
+
+.navName{
+    color: rgb(30, 52, 124);
+    font-size: 17px;
+}
+
+#backToTop{
+    margin:5px;
+}
+
+.contactName{
+    font-size: 17px;
+    color: rgb(212, 208, 208)
+}
+
+.contactNum{
+    font-size: 15px;
+    color: rgb(212, 208, 208)
 }
