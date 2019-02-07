@@ -32,3 +32,8 @@ html {box-sizing: border-box;}
 .photo{
     width:350px;
 }
+
+.freshBy{
+    margin:10px 0 10px 0;
+    color: blue
+}

@@ -10,11 +10,10 @@ class Form extends Component {
   state = {
     photo:'',
     title: '',
-    description:'',
-    id: this.props.match.params.id,
-    selectedFile: null
+    fresh_by:'',
+    description:"",
+    id: this.props.match.params.id
   }
-    
 
 
  //handleSubmit
@@ -24,6 +23,7 @@ class Form extends Component {
        photo: this.state.photo,
        title: this.state.title,
        description: this.state.description,
+       fresh_by: this.state.fresh_by,
        id: this.state.id
     }).then(() => {
       this.props.history.goBack()
@@ -59,7 +59,9 @@ class Form extends Component {
           <input className="image" autoComplete='off' type="url" name="photo" onChange={this.handleChange} placeholder="Photo URL" value={this.state.photo}/> <br/>
           <input className="formtitle" autoComplete='off' type="text" name="title" onChange={this.handleChange} placeholder="Title" value={this.state.title}/><br/>
           <textarea className="textarea" autoComplete='off' name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description}></textarea><br/>
-          <button type="submit">Submit</button> 
+          <label>Fresh By Date:</label> <br/>
+          <input className="fdate" autoComplete='off' type="date" data-date-format="DD MMMM YYYY" name="fresh_by" onChange={this.handleChange} value={this.state.fresh_by}/><br/>
+          <button  className="submit" type="submit">Submit</button> 
 
         </form>
         

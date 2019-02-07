@@ -18,6 +18,7 @@ class Post extends Component {
             <div><h2>{this.props.post.title}</h2></div>
             <button className="replybutton">reply</button>
             <div>{this.props.post.description}</div>
+            <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
             <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
           </div>
           <Footer /> 
