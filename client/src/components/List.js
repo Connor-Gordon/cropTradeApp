@@ -15,7 +15,7 @@ class List extends Component {
   render() {
     return (
       <div className="listCon">
-        <div >
+        <div className="bodyCon">
           <h1>Crop Trade App</h1>
           <h1 className="catname">{this.props.match.params.slug}</h1> 
           <div className="bodyCon">
@@ -25,12 +25,16 @@ class List extends Component {
                       <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add Post</Link>
                   </div>
           </div>
-          <div>
-              <ul>
+          <div className="gridMain">
+              <div className="gridCon">
                   {this.props.posts.map(item => (
-                      <li key={item.id}> <Link className="postLi" to={`/post/${item.id}`}>{item.title} (Las Vegas) </Link> </li>
+                    <div className="grid">
+                      
+                       <Link key={item.id} className="postLi" to={`/post/${item.id}`}> <img className="gridimage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+                    
+                    </div>
                   ))}
-              </ul>
+              </div>
           </div>
         </div>
         <div>

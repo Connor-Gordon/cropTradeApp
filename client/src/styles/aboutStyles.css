@@ -2,5 +2,35 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .aboutUs{
-    background-image: url(https://media.istockphoto.com/vectors/abstract-vector-background-blue-and-green-transparent-waved-lines-for-vector-id922527040)
+    width: 1000px;
+    margin: auto;
+    padding: 15px;
+    background-image: url(http://www.teigncvs.org.uk/wp-content/uploads/2017/01/blue-green-polygon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aboutCon{
+    width: 875px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(206, 204, 202, .5);
+    border-radius:10px;
+}
+
+.abouttitle{
+    padding-left: 360px;
+    text-decoration: underline;
+}
+
+.thespark{
+    margin: 20px 0 5px 0;
+}
+.theapp{
+    margin: 30px 0 5px 0;
+}
+.pinfo{
+    margin: 0;
+    padding-left: 10px;
+    
+
 }
