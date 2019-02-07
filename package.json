@@ -15,7 +15,8 @@
     "cloudinary-react": "^1.1.0",
     "concurrently": "^4.1.0",
     "jquery": "^3.3.1",
-    "react-dropzone": "^8.0.4"
+    "react-dropzone": "^8.0.4",
+    "react-scroll-up-button": "^1.6.4"
   },
   "boilerplate": {
     "name": "react-server-boilerplate",
