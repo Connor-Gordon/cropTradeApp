@@ -3,7 +3,8 @@ const initialState = {
   posts:[],
   post:{},
   scat:[],
-  form:{}
+  form:{},
+  searchResults:[]
 }
 
 export default function (state = initialState, action) {
@@ -17,6 +18,8 @@ export default function (state = initialState, action) {
       return {...state, post: action.payload}
     case 'GET_SINGLECAT':
       return {...state, scat: action.payload}   
+    case 'GET_SEARCH':
+      return {...state, searchResults: action.payload}
     default:
       return state
   }

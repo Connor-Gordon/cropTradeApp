@@ -5,8 +5,6 @@ import { getPost } from '../actions/listActions';
 import '../styles/postStyles.css'
 import Footer from './Footer'
 
-
-
 class Post extends Component {
   componentDidMount() {
     getPost(this.props.match.params.id)

@@ -4,9 +4,8 @@ import { getPosts } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 
 import '../styles/listStyles.css'
+
 import Footer from './Footer'
-
-
 class List extends Component {
   componentDidMount() {
     getPosts(this.props.match.params.slug, this.props.match.params.id)
@@ -14,6 +13,7 @@ class List extends Component {
   
   render() {
     return (
+
       <div className="listCon">
         <div className="bodyCon">
           <h1>Crop Trade App</h1>
