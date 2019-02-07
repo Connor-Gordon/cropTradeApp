@@ -51,9 +51,9 @@ Router.get('/posts/:category/:id', (req, res, next) =>{
 
 //add a new post page 
 Router.post('/form', (req, res, next)=>{
-  const sql = 'INSERT INTO posts (photo, title, description, cat_id) VALUES (?, ?, ?, ?)'
+  const sql = 'INSERT INTO posts (photo, title, description, cat_id, fresh_by) VALUES (?, ?, ?, ?, ?)'
 
-  const values = [req.body.photo, req.body.title, req.body.description, req.body.id,]
+  const values = [req.body.photo, req.body.title, req.body.description, req.body.id, req.body.fresh_by]
 
   conn.query(sql, values, (err, results, fields)=>{
     console.log(results)

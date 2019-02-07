@@ -1,19 +1,19 @@
 html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
-li{
-    list-style: none;
-    height: 25px;
+p{
+    margin:0;
+    
 }
 
 .listCon{
     margin:auto;
-    width: 700px;
+    width: 900px;
    background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
    background-size: cover;
    background-repeat: no-repeat;
     border-radius: 10px;
-
+    border: double gray;
 }
 .bodyCon{
     width: 700px;
@@ -45,12 +45,33 @@ h1{
 }
 
 .postLi{
-    color:grey;
+    color:rgb(39, 37, 37);
 }
 
 .postLi:hover{
     font-size: 18px;
-    color: rgb(82, 77, 77)
+    color: rgb(37, 119, 8)
 }
 
+.gridimage{
+    width: 210px;
+    height: 150px;
+}
 
+.grid{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(40, 66, 40);
+    border-radius: 5px;
+    margin:5px;
+}
+ .gridCon{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     
+ }
+
+ .gridMain{
+     margin: auto;
+ }

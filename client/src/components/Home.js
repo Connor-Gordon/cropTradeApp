@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import '../styles/homeStyles.css'
 
 import Footer from './Footer'
+import '../styles/homeStyles.css'
 
 
 
