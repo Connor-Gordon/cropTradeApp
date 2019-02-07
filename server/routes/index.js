@@ -60,6 +60,19 @@ Router.post('/form', (req, res, next)=>{
   })
 })
 
+
+
+//search bar
+Router.get('/search/:searchResults', (req, res, next) =>{
+  let searchResults = '%' + req.params.searchResults + '%'
+  const sql = `SELECT * FROM posts WHERE description LIKE ? OR title LIKE ?`
+
+  conn.query(sql, [searchResults, searchResults], (err, results, fields)=>{
+    console.log(results)
+    res.json(results)
+  })
+})
+
 //subcategories-posts
 Router.get('/:posts/:id', (req, res, next) =>{
   let id = req.params.id
@@ -70,18 +83,6 @@ Router.get('/:posts/:id', (req, res, next) =>{
     res.json(results)
   })
 })
-
-//search bar
-Router.get('/search/:results', (req, res, next) =>{
-  let searchResults = req.params.searchResults
-  const sql = `SELECT * FROM posts WHERE description LIKE '%?%' OR title LIKE '%?%'`
-
-  conn.query (sql, [searchResults], (err, results, fields)=>{
-    res.json(results)
-  })
-})
-
-
 
 
 

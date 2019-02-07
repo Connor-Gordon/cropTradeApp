@@ -12,7 +12,7 @@ import Scat from './Singlecat'
 import Form from './Form'
 import About from './About'
 import Search from './Search'
-import Footer from './Footer'
+import SignIn from './SignIn'
 
 class App extends Component {
   render() {
@@ -23,13 +23,13 @@ class App extends Component {
             <Search />
             <Switch> 
               <Route path="/about" component={About} />
+              <Route path="/signin" component={SignIn} />
               <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
               <Route  path="/post/:id"  component={Post} />
               <Route  path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route  path="/:slug/:id"  component={List} /> 
-              
             </Switch>
           </div>
         </Router>
