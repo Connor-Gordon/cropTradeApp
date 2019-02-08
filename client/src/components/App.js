@@ -13,6 +13,7 @@ import Form from './Form'
 import About from './About'
 import Search from './Search'
 import SignIn from './SignIn'
+import Chat from './Chat'
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
               <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
               <Route  path="/post/:id"  component={Post} />
+              <Route path="/chatroom" component={Chat} />
               <Route  path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route  path="/:slug/:id"  component={List} /> 
