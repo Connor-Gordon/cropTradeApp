@@ -39,6 +39,16 @@ export function getsingleCat(slug,id) {
   })
 }
 
+
+export function getSearch(searchResults) {
+  axios.get('/search/' + searchResults).then(resp => {
+    store.dispatch({
+      type: 'GET_SEARCH',
+      payload: resp.data
+    })
+  })
+}
+
 export function getForm(post) {
   return axios.post('/form/',post)
 }
