@@ -11,7 +11,10 @@ class AuthService {
     this.authPath = config.authPath || 'login'
   }
 
+
+  // assign token when logging in
   // login method takes username and pw
+  // all fetches from then on will us token to call api
   login = (username, password) => {
     // uses fetch (like native ajax call) to pass info
     return this.fetch(`${this.domain}/${this.authPath}`, {
@@ -65,6 +68,9 @@ class AuthService {
     return decode(this.getToken())
   }
 
+
+  // reason we have on here, is that were using api w/token to make these calls
+
   get = (url) => {
     return this.fetch(url, {
       method: 'GET'
@@ -75,6 +81,7 @@ class AuthService {
   put = (url, data) => {
     return this.fetch(url, {
       method: 'PUT',
+      // takes object and turns into json string
       body: JSON.stringify(data)
     })
     .then(resp => resp.json())
@@ -108,13 +115,14 @@ class AuthService {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-
+// if they are logged in, add authorization header, bearer + token
     if (this.loggedIn()) {
       headers['Authorization'] = 'Bearer ' + this.getToken()
     }
 
     return fetch(url, {
       headers,
+      // options are things that methods above returns
       ...options
     })
     .then(this._checkStatus)

@@ -17,7 +17,7 @@ export function addMessage(message) {
 }
 
 export function assignUsername(username, password) {
-    return axios.post('/register', {
+    return axios.post('/login', {
         username: username,
         password: password})
   }

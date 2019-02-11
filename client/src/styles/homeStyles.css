@@ -5,8 +5,7 @@ a{
     text-decoration-color:rgb(151, 84, 6)
 }
 #catCon{
-    width:900px;
-    height: 900px;
+    height: 600px;
     padding-top: 85px;
     display: flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ a{
 
 .appTitle{
     padding-top: 1px;
-    width: 895px;
     height: 60px;
     text-align: center;
     color: rgb(232, 240, 204);
@@ -29,12 +27,10 @@ a{
 
 
 .superCon{
-    width: 1300px;
     margin: auto;
 
 }
 .mainCon{
-    width:900px;
     margin: auto;
     border: double rgb(31, 100, 18);
     background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/92/17/2857e240b74eb0f.jpg);

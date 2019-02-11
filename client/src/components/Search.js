@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSearch } from '../actions/listActions';
+ 
 
 import { Link } from 'react-router-dom'
 import '../styles/searchStyles.css'
@@ -33,16 +34,32 @@ class Search extends Component {
   }
 
   render() {
-    // filter through the searchResults array
-  }
-
-  render() {
     // filter through the searchResults array, only display the ones with an index
     let filteredSearchResults = this.props.searchResults.filter(
         (searchResult) => {
             return searchResult.title.indexOf(this.state.search) !== -1
         }
     )
+    
+    // sets login/register buttons to toggle to display username/icons when signed in
+    let loginButton = ""
+
+    if (this.state.username){
+        loginButton = <div>
+                        <div>
+                            <i className="fa fa-inbox"></i>
+                            <i className="fa fa-cog"></i>
+                        </div>
+                        <Link className="searchButton" to={`/Profile`}>{this.state.username}</Link>
+                        <Link className="searchButton" to={`/`}>Log out</Link>
+                        
+                    </div>
+    } else {
+        loginButton = <div>
+                        <Link className="searchButton" to={`/login`}>Log In</Link>
+                        <Link className="searchButton" to={`/Register`}>Register</Link>
+                    </div>
+    }
     
     return (
       <div className='searchDiv'>
@@ -53,11 +70,11 @@ class Search extends Component {
             <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
             <button className="searchButton" type="submit">Submit</button>
             </div>
+            
             <div>
                 {/* insert if statement here, if user is logged in, display username w/link to profile
                     if no username, link to sign in page */}
-                <Link className="searchButton" to={`/signin`}>Sign In</Link>
-                <Link className="searchButton" to={`/Register`}>Register</Link>
+                {loginButton}
             </div>
         </form>
         </div>
