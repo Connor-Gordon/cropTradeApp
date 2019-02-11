@@ -64,7 +64,7 @@ handleSubmit = e => {
               </div>
             </div>
             <div className="sendMessageCon">
-              <form autoComplete="off" onSubmit={this.handleSubmit}>
+              <form className="chatsendbar" autoComplete="off" onSubmit={this.handleSubmit}>
                 <input className="messagechatBar" type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
                 <button className="sendchatbutton" type="submit">Send</button>
               </form>
