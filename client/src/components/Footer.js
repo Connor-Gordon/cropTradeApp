@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import ScrollUpButton from "react-scroll-up-button"
 
 import '../styles/footerStyles.css'
 
@@ -11,32 +10,16 @@ class Footer extends Component {
   
   render() {
     return (
-      <div className='footer'>
-        <div id="navLinks">
-            <ul>
+      <div >
+        <div className='footer'>
+            <ul id='footerUl'>
                 <li><Link className="navName" to={'/'}>Home</Link></li>
-                <li><Link className="navName" to={"/About"}>About</Link></li>
-                <li><Link className="navName" to={'/Profile'}>Profile</Link></li>
-                <li><Link className="navName" to={'/Settings'}>Settings</Link></li>
+                <li><Link className="navName" to={"/About"}>About Us</Link></li>
+                <li><Link className="navName" to={'/ComingSoon'}>Profile</Link></li>
+                <li><Link className="navName" to={'/ComingSoon'}>Settings</Link></li>
+                <li><Link className="navName" to={'/ComingSoon'}>Contact Us</Link></li>
+                <li><a className="navName" href="#searchForm">Top of Page</a></li>
             </ul>
-        </div>
-        <div>
-            <h3 id="contactTitle">Contact Us</h3>
-            <div id="contactUs">
-                <ul>
-                    <li className="contactName">Connor Gordon</li>
-                    <li className="contactNum">702-279-8978</li>
-                    <li className="contactNum">con.gordon@gmail.com</li>
-                </ul>
-                <ul>
-                    <li className="contactName">Sucely Chavarria</li>
-                    <li className="contactNum">818-720-4538</li>
-                    <li className="contactNum">sucely.c07@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <div id="backToTop">
-            <ScrollUpButton />
         </div>
       </div>
     )

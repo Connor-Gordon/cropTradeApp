@@ -43,9 +43,9 @@ class About extends Component {
                     <p>Sucely Chavarria</p>
                     <p> Junior developer, </p>
                 </div>
-                <Footer />
             </div>
         </div>
+                <Footer />
       </div>
     )
   }

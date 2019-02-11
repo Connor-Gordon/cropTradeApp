@@ -23,8 +23,8 @@ class Post extends Component {
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
             <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
           </div>
-          <Footer /> 
         </div>
+        <Footer /> 
       </div>
     )
   }

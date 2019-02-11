@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSearch } from '../actions/listActions';
 
+
 import { Link } from 'react-router-dom'
 import '../styles/searchStyles.css'
 
@@ -19,8 +20,8 @@ class Search extends Component {
 
   handleSubmit = e => {
       e.preventDefault()
-          getSearch(this.state.search)
-          this.setState({
+        getSearch(this.state.search)
+        this.setState({
               search: ""
           })
   }
@@ -30,26 +31,33 @@ class Search extends Component {
       this.setState({
           [e.target.name]: e.target.value
       })
+          
   }
 
   render() {
-    // filter through the searchResults array, only display the ones with an index
+    // filter through the searchResults array
     let filteredSearchResults = this.props.searchResults.filter(
         (searchResult) => {
             return searchResult.title.indexOf(this.state.search) !== -1
         }
     )
+
+    
     return (
       <div className='searchDiv'>
         <div>
-        <form className="searchForm" onSubmit={this.handleSubmit}>
+        <form id="searchForm" onSubmit={this.handleSubmit}>
+            <div>
             {/* value from input will go to the state above, and on any change, run the handleChange fn to change the state and run the getSearch fn */}
             <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
             <button className="searchButton" type="submit">Submit</button>
+            </div>
             <div>
                 {/* insert if statement here, if user is logged in, display username w/link to profile
                     if no username, link to sign in page */}
-                <Link to={`/signin`}>Log In</Link>
+                <Link className="searchButton" to={`/signin`}>Sign In</Link>
+                <Link className="searchButton" to={`/Register`}>Register</Link>
+
             </div>
         </form>
         
@@ -61,7 +69,7 @@ class Search extends Component {
                         <Link className="searchLink" to={`/post/${searchResult.id}`}>
                         <p className="searchP">{searchResult.title}</p>
                         <p>{searchResult.zipcode}</p>
-                        <img alt="NoFuckingPicture" className="searchPhoto" src={searchResult.photo}></img>
+                        <img alt="NoPic" className="searchPhoto" src={searchResult.photo}></img>
                         </Link>
                     </li>
                 
@@ -76,7 +84,7 @@ class Search extends Component {
 function mapStateToProps(appState) {
   return {
     searchResults: appState.listingsReducer.searchResults,
-    username: appState.usersReducer.username
+    username: appState.chatReducer.username
   }
 }
 export default connect(mapStateToProps)(Search)

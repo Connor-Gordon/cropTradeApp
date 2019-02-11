@@ -39,16 +39,19 @@ Router.post('/login', (req, res, next)=>{
 
 
 Router.post('/register', (req, res, next) => {
+    console.log("authRoute post", res)
     const sql = 'INSERT INTO users (username, password) VALUES (?,?) '
-    if (!req.body.username || !req.body.password){
-        res.json({
+    if (!res.body.username || !res.body.password){
+        res.json(
+            {
             message: 'Both username and password fields are required'
         })
     } else{
         conn.query(sql, [req.body.username, req.body.password], (err, results, fields) => {
-            const token = {username: req.body.username,
-                            password: req.body.password
-                            }
+            const token = {
+                username: req.body.username,
+                password: req.body.password
+                }
             res.json({
                 message: 'User registered successfully',
                 token: token

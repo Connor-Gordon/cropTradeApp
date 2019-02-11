@@ -1,34 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { assignUsername } from '../actions/userActions'
+import { assignUsername } from '../actions/chatActions'
 import Footer from './Footer'
-import Register from './Register'
 import { withAuth } from '../lib/auth'
 
-class SignIn extends Component {
+class Register extends Component {
     state = {
         username: "",
         password: ""
     }
     
-    handleSubmit = e => {
+    handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username).then(() => {
-            this.props.history.push('/')
-        })
-    }
-
-    handleSubmitWoUser = e => {
-        e.preventDefault()
-        assignUsername("").then(() => {
-            this.props.history.push('/')
+        assignUsername(this.state.username, this.state.password)
+        console.log("Register.js handle submit", this.state)
+        this.setState({
+            username: "",
+            password: ""
         })
     }
 
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.value,
-            
+            [e.target.name]: e.target.value
             })
           } 
 
@@ -45,7 +39,6 @@ class SignIn extends Component {
                     </form>
                 </div>
                 <div>
-                    <Register />
                 </div>
                 <Footer />
                 </div>
@@ -56,10 +49,10 @@ class SignIn extends Component {
 
 function mapStateToProps(appState, ownProps) {
     return {
-        username: appState.usersReducer.username,
-        password: appState.usersReducer.password,
+        username: appState.chatReducer.username,
+        password: appState.chatReducer.password,
         history: ownProps.history
     } 
   }
   
-  export default  withAuth(connect(mapStateToProps)(SignIn))
+  export default  withAuth(connect(mapStateToProps)(Register))

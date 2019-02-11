@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { assignUsername } from '../actions/userActions'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
+import { assignUsername } from '../actions/chatActions'
 
 class SignIn extends Component {
     state = {
@@ -11,17 +11,12 @@ class SignIn extends Component {
         password: ""
     }
     
-    handleSubmit = e => {
+    handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username).then(() => {
-            this.props.history.push('/')
-        })
-    }
-
-    handleSubmitWoUser = e => {
-        e.preventDefault()
-        assignUsername("").then(() => {
-            this.props.history.push('/')
+        assignUsername(this.state.username, this.state.password)
+        this.setState({
+            username: "",
+            password: ""
         })
     }
 
@@ -45,6 +40,7 @@ class SignIn extends Component {
                     </form>
                 </div>
                 <div>
+                    <p>Not signed up yet?</p>
                     <Link to={"/Register"} >Click here to register</Link>
                 </div>
                 <Footer />
@@ -56,8 +52,8 @@ class SignIn extends Component {
 
 function mapStateToProps(appState, ownProps) {
     return {
-        username: appState.usersReducer.username,
-        password: appState.usersReducer.password,
+        username: appState.chatReducer.username,
+        password: appState.chatReducer.password,
         history: ownProps.history
     } 
   }

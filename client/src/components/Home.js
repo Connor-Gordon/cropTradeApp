@@ -34,6 +34,9 @@ class Home extends Component {
             </div>
             ))}
           </div>
+          
+        </div>
+        <div>
         <Footer /> 
         </div>
       </div>
