@@ -55,7 +55,6 @@ Router.post('/form', (req, res, next)=>{
   const values = [req.body.photo, req.body.title, req.body.description, req.body.id, req.body.fresh_by]
 
   conn.query(sql, values, (err, results, fields)=>{
-    console.log(results)
     res.json({message: 'New Post Added'})
   })
 })
@@ -68,7 +67,6 @@ Router.get('/search/:searchResults', (req, res, next) =>{
   const sql = `SELECT * FROM posts WHERE description LIKE ? OR title LIKE ?`
 
   conn.query(sql, [searchResults, searchResults], (err, results, fields)=>{
-    console.log(results)
     res.json(results)
   })
 })

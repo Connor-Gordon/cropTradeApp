@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
 import { assignUsername } from '../actions/chatActions'
 
+import '../styles/loginStyles.css'
+
 class SignIn extends Component {
     state = {
         username: "",
@@ -31,7 +33,7 @@ class SignIn extends Component {
             return(
                 <div>
                 <div id="login">
-                    <h2>Enter Username and password</h2>
+                    <h2>Enter Username and password:</h2>
                     <form onSubmit={this.handleSubmit} id="loginForm">
                         <input name='username' className="loginStuff" type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
                         <input name='password' className="loginStuff" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>

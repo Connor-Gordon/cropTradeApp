@@ -17,7 +17,7 @@ class Footer extends Component {
                 <li><Link className="navName" to={"/About"}>About Us</Link></li>
                 <li><Link className="navName" to={'/ComingSoon'}>Profile</Link></li>
                 <li><Link className="navName" to={'/ComingSoon'}>Settings</Link></li>
-                <li><Link className="navName" to={'/ComingSoon'}>Contact Us</Link></li>
+                <li><Link className="navName" to={'/ContactUs'}>Contact Us</Link></li>
                 <li><a className="navName" href="#searchForm">Top of Page</a></li>
             </ul>
         </div>

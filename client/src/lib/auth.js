@@ -2,50 +2,65 @@ import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { decode } from 'jsonwebtoken'
 
+// just a class, not a component
 class AuthService {
   constructor(config = {}) {
+    // where should domain go
     this.domain = config.domain || '/api'
+    // what path am i supposed to call api, /api/login
     this.authPath = config.authPath || 'login'
   }
 
+  // login method takes username and pw
   login = (username, password) => {
+    // uses fetch (like native ajax call) to pass info
     return this.fetch(`${this.domain}/${this.authPath}`, {
       method: 'POST',
       body: JSON.stringify({
         username, password
       })
+      // then use setToken and return the result
     }).then(res => {
       this.setToken(res.token)
       return Promise.resolve(res)
     })
   }
 
+  // removes token from localStorage in browser
   logout = () => {
     localStorage.removeItem('authtoken')
   }
 
+  // checks whether user is logged in
   loggedIn = () => {
+    // grab token
     const token = this.getToken()
-    return !!token && !this.isTokenExpired(token)
+    // return token is there and is not expired
+    return !!token 
+    // && !this.isTokenExpired(token)
   }
 
-  isTokenExpired = (token) => {
-    try {
-      const decoded = decode(token)
-      return decoded.exp < Date.now() / 1000
-    } catch (err) {
-      return false
-    }
-  }
+  // checks if token is expired
+  // isTokenExpired = (token) => {
+  //   try {
+  //     const decoded = decode(token)
+  //     return decoded.exp < Date.now() / 1000
+  //   } catch (err) {
+  //     return false
+  //   }
+  // }
 
+  // putting token in localStorage in browser and calling authtoken
   setToken = (token) => {
     localStorage.setItem('authtoken', token)
   }
 
+  // grabs token from local storage
   getToken = () => {
     return localStorage.getItem('authtoken')
   }
 
+  // gets info from token
   getProfile = () => {
     return decode(this.getToken())
   }
@@ -116,6 +131,12 @@ class AuthService {
     }
   }
 }
+
+
+
+
+
+
 
 export const api = new AuthService()
 

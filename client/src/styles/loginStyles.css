@@ -1,0 +1,22 @@
+.loginStuff {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+
+    color: #20bf6b !important;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #20bf6b !important;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+.loginStuff:hover {
+  color: #494949 !important;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  outline: none;
+  }

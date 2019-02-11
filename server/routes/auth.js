@@ -41,7 +41,7 @@ Router.post('/login', (req, res, next)=>{
 Router.post('/register', (req, res, next) => {
     console.log("authRoute post", res)
     const sql = 'INSERT INTO users (username, password) VALUES (?,?) '
-    if (!res.body.username || !res.body.password){
+    if (!req.body.username || !req.body.password){
         res.json(
             {
             message: 'Both username and password fields are required'

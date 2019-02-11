@@ -4,6 +4,8 @@ import { assignUsername } from '../actions/chatActions'
 import Footer from './Footer'
 import { withAuth } from '../lib/auth'
 
+import '../styles/loginStyles.css'
+
 class Register extends Component {
     state = {
         username: "",
