@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getForm } from '../actions/listActions';
-
+import axios from 'axios'
 import '../styles/formStyles.css'
+
 
 
 class Form extends Component {
   state = {
     photo:'',
     title: '',
-    description:'',
     fresh_by:'',
+    description:"",
     id: this.props.match.params.id
   }
-    
 
 
  //handleSubmit
@@ -37,10 +37,24 @@ class Form extends Component {
       [e.target.name]: e.target.value
     })
   }
+
+  fileSelectedHandler = e => {
+    console.log(e.target.files[0])
+    this.setState({
+      selectedFile: e.target.files[0]
+    })
+  }
+
+  fileUploadHandler = () => {
+    axios.post('')
+  }
   
   render() {
     return (
       <div>
+        <input type="file" onChange={this.fileSelectedHandler}/>
+        <button onClick={this.fileUploadHandler}>Upload</button>
+
         <form onSubmit={this.handleSubmit}>
           <input className="image" autoComplete='off' type="url" name="photo" onChange={this.handleChange} placeholder="Photo URL" value={this.state.photo}/> <br/>
           <input className="formtitle" autoComplete='off' type="text" name="title" onChange={this.handleChange} placeholder="Title" value={this.state.title}/><br/>

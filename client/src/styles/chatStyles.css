@@ -1,0 +1,62 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+
+.mainchatCon{
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    border: double rgb(90, 187, 115);
+    background-color: rgb(233, 238, 230);
+    display: flex;
+
+}
+
+
+#roomWrap{
+    margin: auto;
+    width: 500px;
+    height: 450px;
+    
+    
+}
+
+.chatCon{
+
+    height: 100%;
+    overflow: auto;
+}
+
+.messagechatBar{
+    width: 400px;
+    outline:none;
+    
+}
+
+.sendMessageCon{
+    margin: auto;
+    position: relative;
+    padding: 7px 5px 7px 15px;
+    width: 400px;
+    border-top: 1px solid gray;
+   
+}
+
+.roomUsername{
+    margin-left: 10px;
+    color:rgb(0, 0, 214);
+}
+
+.sendchatbutton{
+    color:white;
+    background: rgb(90, 187, 115);
+}
+
+.chatsendbar{
+    width: 490px;
+    margin-left: -68px;
+    background-color: rgb(247, 244, 220);
+    
+
+}

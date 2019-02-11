@@ -18,7 +18,7 @@ import Register from './Register'
 import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
 import { withAuth } from '../lib/auth';
-
+import Chat from './Chat'
 
 class App extends Component {
   render() {
@@ -32,15 +32,14 @@ class App extends Component {
               <Route path="/register" component={Register} />
               <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
-              <Route  path="/post/:id"  component={Post} />
-              <Route  path="/posts/:slug/:id"  component={Scat} />
-              <Route  path="/contactus"  component={ContactUs} />
+              <Route path="/post/:id"  component={Post} />
+              <Route path="/chatroom" component={Chat} />
+              <Route path="/posts/:slug/:id"  component={Scat} />
+              <Route path="/contactus"  component={ContactUs} />
               <Route path="/form/:slug/:id" component={Form} />
-              <Route  path="/:slug/:id"  component={List} /> 
+              <Route path="/:slug/:id"  component={List} /> 
               <Route path="/comingSoon" component={ComingSoon} />
-              
             </Switch>
-            
           </div>
         </Router>
       </Provider>

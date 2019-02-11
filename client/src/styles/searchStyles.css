@@ -8,6 +8,7 @@ html {box-sizing: border-box;}
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #20bf6b !important;
+
 }
 .search {
     width: 600px;
@@ -36,7 +37,6 @@ html {box-sizing: border-box;}
   .search:focus {
     outline: none;
   }
-
 
 /* ul */
   .searchUL {

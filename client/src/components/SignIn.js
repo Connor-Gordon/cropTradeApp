@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
@@ -25,7 +26,6 @@ class SignIn extends Component {
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value,
-            
             })
           } 
 
@@ -61,3 +61,4 @@ function mapStateToProps(appState, ownProps) {
   }
   
   export default  withAuth(connect(mapStateToProps)(SignIn))
+

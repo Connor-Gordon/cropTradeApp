@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSearch } from '../actions/listActions';
 
-
 import { Link } from 'react-router-dom'
 import '../styles/searchStyles.css'
 
@@ -20,8 +19,8 @@ class Search extends Component {
 
   handleSubmit = e => {
       e.preventDefault()
-        getSearch(this.state.search)
-        this.setState({
+          getSearch(this.state.search)
+          this.setState({
               search: ""
           })
   }
@@ -31,17 +30,19 @@ class Search extends Component {
       this.setState({
           [e.target.name]: e.target.value
       })
-          
   }
 
   render() {
     // filter through the searchResults array
+  }
+
+  render() {
+    // filter through the searchResults array, only display the ones with an index
     let filteredSearchResults = this.props.searchResults.filter(
         (searchResult) => {
             return searchResult.title.indexOf(this.state.search) !== -1
         }
     )
-
     
     return (
       <div className='searchDiv'>
@@ -57,10 +58,8 @@ class Search extends Component {
                     if no username, link to sign in page */}
                 <Link className="searchButton" to={`/signin`}>Sign In</Link>
                 <Link className="searchButton" to={`/Register`}>Register</Link>
-
             </div>
         </form>
-        
         </div>
         <div className="searchDisplay">
             <ul className="searchUL">
