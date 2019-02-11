@@ -1,14 +1,12 @@
 import { createStore, combineReducers } from 'redux'
 
 import listingsReducer from './reducers/listingsReducer'
-import usersReducer from './reducers/usersReducer'
 import chatReducer from './reducers/chatReducer'
 // import all reducers here
 
 const rootReducer = combineReducers({
   listingsReducer,
-  chatReducer,
-  usersReducer
+  chatReducer
   // put reducers here
 })
 

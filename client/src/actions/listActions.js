@@ -48,8 +48,6 @@ export function getSearch(searchResults) {
   })
 }
 
-
-
 export function getForm(post) {
   return axios.post('/form/',post)
 }

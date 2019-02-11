@@ -1,12 +1,19 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-
+import Router from './routes/index'
+import AuthRouter from './routes/auth'
 const app = express()
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.use('/api', require('./routes'))
+
+
+// this is where all your issues keep coming from
+
+app.use('/api',  Router)
+// router for authorization
+app.use('/api', AuthRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -15,6 +22,7 @@ app.use(function(req, res, next) {
   next(err)
 })
 
+// catch 500 error
 app.use(function(err, req, res, next) {
   res.status(err.status || 500)
   res.json({

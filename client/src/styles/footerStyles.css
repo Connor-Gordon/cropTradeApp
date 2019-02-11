@@ -1,35 +1,30 @@
 .footer {
+    border-top: 1px solid #20bf6b !important;
+    margin: 10px;
+}
+
+#footerUl {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    list-style: none;
 }
 
-#contactTitle {
-    font-weight: bold;
-    text-decoration: underline;
-    text-align: center;
-    font-size: 21px;
-    color:rgb(202, 200, 200);
-}
-
-#contactUs {
-    display: flex;
-}
-
-.navName{
-    color: rgb(30, 52, 124);
+.navName {
     font-size: 17px;
+    text-decoration: none;
+    color: #20bf6b !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #20bf6b !important;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
 }
 
-#backToTop{
-    margin:5px;
-}
-
-.contactName{
-    font-size: 17px;
-    color: rgb(212, 208, 208)
-}
-
-.contactNum{
-    font-size: 15px;
-    color: rgb(212, 208, 208)
+.navName:hover {
+    color: #494949 !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
 }

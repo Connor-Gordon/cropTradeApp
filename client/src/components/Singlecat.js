@@ -29,7 +29,6 @@ class Post extends Component {
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
   return {
    scat: appState.listingsReducer.scat
   }

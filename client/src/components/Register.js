@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import Footer from './Footer'
-import { Link } from 'react-router-dom'
-import { withAuth } from '../lib/auth'
 import { assignUsername } from '../actions/chatActions'
+import Footer from './Footer'
+import { withAuth } from '../lib/auth'
 
 import '../styles/loginStyles.css'
 
-class SignIn extends Component {
+class Register extends Component {
     state = {
         username: "",
         password: ""
@@ -17,6 +15,7 @@ class SignIn extends Component {
     handleSubmit= (e) => {
         e.preventDefault()
         assignUsername(this.state.username, this.state.password)
+        console.log("Register.js handle submit", this.state)
         this.setState({
             username: "",
             password: ""
@@ -25,7 +24,7 @@ class SignIn extends Component {
 
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value
             })
           } 
 
@@ -33,7 +32,7 @@ class SignIn extends Component {
             return(
                 <div>
                 <div id="login">
-                    <h2>Enter Username and password:</h2>
+                    <h2>Choose a username to be recognized!</h2>
                     <form onSubmit={this.handleSubmit} id="loginForm">
                         <input name='username' className="loginStuff" type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
                         <input name='password' className="loginStuff" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>
@@ -42,8 +41,6 @@ class SignIn extends Component {
                     </form>
                 </div>
                 <div>
-                    <p>Not signed up yet?</p>
-                    <Link to={"/Register"} >Click here to register</Link>
                 </div>
                 <Footer />
                 </div>
@@ -60,5 +57,4 @@ function mapStateToProps(appState, ownProps) {
     } 
   }
   
-  export default  withAuth(connect(mapStateToProps)(SignIn))
-
+  export default  withAuth(connect(mapStateToProps)(Register))
