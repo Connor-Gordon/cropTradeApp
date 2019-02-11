@@ -19,7 +19,7 @@ class List extends Component {
           <h1>Crop Trade App</h1>
           <h1 className="catname">{this.props.match.params.slug}</h1> 
           <div className="bodyCon">
-              <input className="listsearchbar" type="text" name="searchbar" placeholder="search" />
+
               
                   <div className="addpostButton"> 
                       <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add Post</Link>
@@ -28,9 +28,9 @@ class List extends Component {
           <div className="gridMain">
               <div className="gridCon">
                   {this.props.posts.map(item => (
-                    <div className="grid">
+                    <div key={item.id} className="grid">
                       
-                       <Link key={item.id} className="postLi" to={`/post/${item.id}`}> <img className="gridimage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+                       <Link  className="postLi" to={`/post/${item.id}`}> <img alt="no_img" className="gridimage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
                     
                     </div>
                   ))}
