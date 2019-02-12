@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { decode } from 'jsonwebtoken'
 
 // just a class, not a component
 class AuthService {
@@ -62,7 +61,7 @@ class AuthService {
 
   // gets info from token
   getProfile = () => {
-    return decode(this.getToken())
+    return this.getToken()
   }
 
   get = (url) => {

@@ -22,9 +22,11 @@ html {box-sizing: border-box;}
 
 
 .replybutton{
+    width:50px;
+    padding: 2px 10px 2px 10px;
     margin: 20px 0 20px 0;
-    background: rgb(236, 168, 179);
-    border: 1px solid rgb(240, 111, 133);
+    background: rgb(241, 239, 239);
+    border: 1px solid rgb(12, 12, 12);
     color: rgb(68, 65, 65);
 
 }

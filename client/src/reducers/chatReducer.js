@@ -1,7 +1,6 @@
 const initialState = {
     messages: [], 
-    username: '',
-    password: ''
+     profile:{}
   }
   
   export default function (state = initialState, action) {
@@ -12,7 +11,7 @@ const initialState = {
       case 'SIGN_IN':
         return {...state, username: action.payload}
       case "REGISTER":
-        return {...state, username: action.payload, password: action.payload}
+        return {...state, profile: action.payload, }
       default:
         return state
     }
