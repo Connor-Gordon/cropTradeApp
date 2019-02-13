@@ -11,7 +11,10 @@ class AuthService {
     this.authPath = config.authPath || 'login'
   }
 
+
+  // assign token when logging in
   // login method takes username and pw
+  // all fetches from then on will us token to call api
   login = (username, password) => {
     // uses fetch (like native ajax call) to pass info
     return this.fetch(`${this.domain}/${this.authPath}`, {
@@ -40,15 +43,15 @@ class AuthService {
     // && !this.isTokenExpired(token)
   }
 
-  // checks if token is expired
-  // isTokenExpired = (token) => {
-  //   try {
-  //     const decoded = decode(token)
-  //     return decoded.exp < Date.now() / 1000
-  //   } catch (err) {
-  //     return false
-  //   }
-  // }
+  //checks if token is expired
+  isTokenExpired = (token) => {
+    try {
+      const decoded = decode(token)
+      return decoded.exp < Date.now() / 1000
+    } catch (err) {
+      return false
+    }
+  }
 
   // putting token in localStorage in browser and calling authtoken
   setToken = (token) => {
@@ -64,6 +67,7 @@ class AuthService {
   getProfile = () => {
     return decode(this.getToken())
   }
+
 
   get = (url) => {
     return this.fetch(url, {
@@ -108,13 +112,14 @@ class AuthService {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-
+// if they are logged in, add authorization header, bearer + token
     if (this.loggedIn()) {
       headers['Authorization'] = 'Bearer ' + this.getToken()
     }
 
     return fetch(url, {
       headers,
+      // options are things that methods above returns
       ...options
     })
     .then(this._checkStatus)

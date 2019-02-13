@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSearch } from '../actions/listActions';
+import { withAuth, api} from '../lib/auth'
+
 
 import { Link } from 'react-router-dom'
 import '../styles/searchStyles.css'
+
 
 class Search extends Component {
 // setting up state so search bar value has something to store too
@@ -12,7 +15,8 @@ class Search extends Component {
       search: ''
   }
 
-  
+  componentDidMount(){
+  }
   // Prevents refreshing automatically
   // Pull the getSearch fn from the actions and pass it the value from the search input,
   // getSearch does axios call to '/search/' + the searchResults passed to it and dispatches the action GET_SEARCH
@@ -32,8 +36,8 @@ class Search extends Component {
       })
   }
 
-  render() {
-    // filter through the searchResults array
+  logout = e => {
+      this.props.signout()
   }
 
   render() {
@@ -44,6 +48,25 @@ class Search extends Component {
         }
     )
     
+    // sets login/register buttons to toggle to display username/icons when signed in
+    // tested w/o username by reversing if and else statements
+    let loginButton = ""
+
+    if (api.getProfile()){
+        loginButton = <div>
+                        <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-inbox"></i> </Link>
+                        <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
+                        <Link className="searchButton" to={`/Profile`}>{api.getProfile().username}</Link>
+                        <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
+                        
+                    </div>
+    } else {
+        loginButton = <div>
+                        <Link className="searchButton" to={`/login`}>Log In</Link>
+                        <Link className="searchButton" to={`/Register`}>Register</Link>
+                    </div>
+    }
+    
     return (
       <div className='searchDiv'>
         <div>
@@ -53,11 +76,11 @@ class Search extends Component {
             <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
             <button className="searchButton" type="submit">Submit</button>
             </div>
+            
             <div>
                 {/* insert if statement here, if user is logged in, display username w/link to profile
                     if no username, link to sign in page */}
-                <Link className="searchButton" to={`/signin`}>Sign In</Link>
-                <Link className="searchButton" to={`/Register`}>Register</Link>
+                {loginButton}
             </div>
         </form>
         </div>
@@ -81,9 +104,10 @@ class Search extends Component {
 }
 
 function mapStateToProps(appState) {
+    console.log(appState)
   return {
     searchResults: appState.listingsReducer.searchResults,
-    username: appState.chatReducer.username
+    token: appState.chatReducer.token
   }
 }
-export default connect(mapStateToProps)(Search)
+export default withAuth(connect(mapStateToProps)(Search))

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import store from '../store'
+import { Authentication } from '../lib/auth'
 
 
 
@@ -17,36 +18,39 @@ import SignIn from './SignIn'
 import Register from './Register'
 import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
-import { withAuth } from '../lib/auth';
+
+// import { withAuth } from '../lib/auth';
 import Chat from './Chat'
 
 class App extends Component {
   render() {
     return (
+      <Authentication redirectUrl="/login">
       <Provider store={store}>
         <Router>
           <div>
             <Search />
+            
             <Switch>
-              <Route path="/signin" component={SignIn} />
+              <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
-              <Route path="/post/:id"  component={Post} />
               <Route path="/chatroom" component={Chat} />
               <Route path="/posts/:slug/:id"  component={Scat} />
               <Route path="/contactus"  component={ContactUs} />
-              <Route path="/form/:slug/:id" component={Form} />
               <Route path="/:slug/:id"  component={List} /> 
               <Route path="/comingSoon" component={ComingSoon} />
+              <Route path="/post/:id"  component={Post} />
+              <Route path="/form/:slug/:id" component={Form} />
             </Switch>
           </div>
         </Router>
       </Provider>
+      </Authentication>
     )
   }
 }
 
 export default App
 
-//<Route  exact path="/"  component={Signin} />

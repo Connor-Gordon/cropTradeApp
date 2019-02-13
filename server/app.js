@@ -10,10 +10,10 @@ app.use(bodyParser.json())
 
 
 // this is where all your issues keep coming from
-
+app.use('/api', AuthRouter)
 app.use('/api',  Router)
 // router for authorization
-app.use('/api', AuthRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

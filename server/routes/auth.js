@@ -2,7 +2,9 @@
 
 import express from 'express'
 import conn from '../utils/db'
-
+import sha512 from 'js-sha512'
+import jwt from 'jsonwebtoken'
+import config from 'config'
 // set express router to the constant 'Router'
 const Router = express.Router()
 
@@ -18,9 +20,9 @@ Router.post('/login', (req, res, next)=>{
         // if valid
         if ( valid ) {
             // set the username with the jwt secret as token
-            const token = {username: req.body.username,
+            const token = jwt.sign({username: req.body.username,
                             password: req.body.password
-            }
+            }, config.get('jwtsecret'))
 
             // and send the token as response with a successful message
             res.json({
@@ -38,7 +40,10 @@ Router.post('/login', (req, res, next)=>{
 })
 
 
+// WORKS WITH POSTMAN, DONT MESS WITH
+
 Router.post('/register', (req, res, next) => {
+    // console logs response to the terminal, see username and pw from inputs come through in res
     console.log("authRoute post", res)
     const sql = 'INSERT INTO users (username, password) VALUES (?,?) '
     if (!req.body.username || !req.body.password){
@@ -48,10 +53,10 @@ Router.post('/register', (req, res, next) => {
         })
     } else{
         conn.query(sql, [req.body.username, req.body.password], (err, results, fields) => {
-            const token = {
+            const token = jwt.sign({
                 username: req.body.username,
                 password: req.body.password
-                }
+                }, config.get('jwtsecret'))
             res.json({
                 message: 'User registered successfully',
                 token: token

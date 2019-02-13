@@ -88,6 +88,7 @@ html {box-sizing: border-box;}
     border-radius: 4px;
     display: inline-block;
     text-decoration: none;
+    margin: 0px 10px;
     }
     
     .searchButton:hover {

@@ -14,11 +14,8 @@ class Register extends Component {
     
     handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username, this.state.password)
-        console.log("Register.js handle submit", this.state)
-        this.setState({
-            username: "",
-            password: ""
+        assignUsername(this.state.username, this.state.password).then(() => {
+            this.props.history.push('/profile')
         })
     }
 
@@ -32,7 +29,7 @@ class Register extends Component {
             return(
                 <div>
                 <div id="login">
-                    <h2>Choose a username to be recognized!</h2>
+                    <h2>Choose a Username and Password</h2>
                     <form onSubmit={this.handleSubmit} id="loginForm">
                         <input name='username' className="loginStuff" type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
                         <input name='password' className="loginStuff" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>
