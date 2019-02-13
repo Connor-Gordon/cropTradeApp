@@ -39,10 +39,10 @@ class App extends Component {
               <Route path="/chatroom" component={Chat} />
               <Route path="/posts/:slug/:id"  component={Scat} />
               <Route path="/contactus"  component={ContactUs} />
-              <Route path="/:slug/:id"  component={List} /> 
               <Route path="/comingSoon" component={ComingSoon} />
               <Route path="/post/:id"  component={Post} />
               <Route path="/form/:slug/:id" component={Form} />
+              <Route path="/:slug/:id"  component={List} /> 
             </Switch>
           </div>
         </Router>
