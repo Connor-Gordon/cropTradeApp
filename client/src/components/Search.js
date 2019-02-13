@@ -54,10 +54,8 @@ class Search extends Component {
 
     if (api.getProfile()){
         loginButton = <div>
-                        <div>
-                            <i className="fa fa-inbox"></i>
-                            <i className="fa fa-cog"></i>
-                        </div>
+                        <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-inbox"></i> </Link>
+                        <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
                         <Link className="searchButton" to={`/Profile`}>{api.getProfile().username}</Link>
                         <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
                         

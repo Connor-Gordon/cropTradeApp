@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import store from '../store'
-import { Authentication, AuthRoute } from '../lib/auth'
+import { Authentication } from '../lib/auth'
 
 
 
