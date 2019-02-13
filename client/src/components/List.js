@@ -20,7 +20,6 @@ class List extends Component {
         <div className="bodyCon">
           <h1 className="catname">{this.props.match.params.slug}</h1> 
           <div className="bodyCon">
-              
                   <div className="addpostButton"> 
                       <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add Post</Link>
                   </div>
@@ -36,7 +35,7 @@ class List extends Component {
           </div>
         </div>
         <div>
-        <Footer /> 
+          <Footer /> 
         </div>
       </div>
     )

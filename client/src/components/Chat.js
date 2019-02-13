@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {addMessage} from '../actions/chatActions'
-
+import Footer from './Footer'
 import '../styles/chatStyles.css'
 
 class Chat extends Component {
@@ -70,6 +70,7 @@ handleSubmit = e => {
               </form>
             </div>
           </div>
+          <Footer />
       </div>
     )
   }

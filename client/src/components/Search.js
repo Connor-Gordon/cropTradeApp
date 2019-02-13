@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSearch } from '../actions/listActions';
- 
+import { withAuth, api} from '../lib/auth'
+
 
 import { Link } from 'react-router-dom'
 import '../styles/searchStyles.css'
+
 
 class Search extends Component {
 // setting up state so search bar value has something to store too
@@ -13,7 +15,8 @@ class Search extends Component {
       search: ''
   }
 
-  
+  componentDidMount(){
+  }
   // Prevents refreshing automatically
   // Pull the getSearch fn from the actions and pass it the value from the search input,
   // getSearch does axios call to '/search/' + the searchResults passed to it and dispatches the action GET_SEARCH
@@ -33,6 +36,10 @@ class Search extends Component {
       })
   }
 
+  logout = e => {
+      this.props.signout()
+  }
+
   render() {
     // filter through the searchResults array, only display the ones with an index
     let filteredSearchResults = this.props.searchResults.filter(
@@ -42,16 +49,17 @@ class Search extends Component {
     )
     
     // sets login/register buttons to toggle to display username/icons when signed in
+    // tested w/o username by reversing if and else statements
     let loginButton = ""
 
-    if (this.state.username){
+    if (api.getProfile()){
         loginButton = <div>
                         <div>
                             <i className="fa fa-inbox"></i>
                             <i className="fa fa-cog"></i>
                         </div>
-                        <Link className="searchButton" to={`/Profile`}>{this.state.username}</Link>
-                        <Link className="searchButton" to={`/`}>Log out</Link>
+                        <Link className="searchButton" to={`/Profile`}>{api.getProfile().username}</Link>
+                        <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
                         
                     </div>
     } else {
@@ -98,9 +106,10 @@ class Search extends Component {
 }
 
 function mapStateToProps(appState) {
+    console.log(appState)
   return {
     searchResults: appState.listingsReducer.searchResults,
-    username: appState.chatReducer.username
+    token: appState.chatReducer.token
   }
 }
-export default connect(mapStateToProps)(Search)
+export default withAuth(connect(mapStateToProps)(Search))

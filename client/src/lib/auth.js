@@ -43,15 +43,15 @@ class AuthService {
     // && !this.isTokenExpired(token)
   }
 
-  // checks if token is expired
-  // isTokenExpired = (token) => {
-  //   try {
-  //     const decoded = decode(token)
-  //     return decoded.exp < Date.now() / 1000
-  //   } catch (err) {
-  //     return false
-  //   }
-  // }
+  //checks if token is expired
+  isTokenExpired = (token) => {
+    try {
+      const decoded = decode(token)
+      return decoded.exp < Date.now() / 1000
+    } catch (err) {
+      return false
+    }
+  }
 
   // putting token in localStorage in browser and calling authtoken
   setToken = (token) => {
@@ -69,8 +69,6 @@ class AuthService {
   }
 
 
-  // reason we have on here, is that were using api w/token to make these calls
-
   get = (url) => {
     return this.fetch(url, {
       method: 'GET'
@@ -81,7 +79,6 @@ class AuthService {
   put = (url, data) => {
     return this.fetch(url, {
       method: 'PUT',
-      // takes object and turns into json string
       body: JSON.stringify(data)
     })
     .then(resp => resp.json())

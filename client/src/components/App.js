@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import store from '../store'
+import { Authentication, AuthRoute } from '../lib/auth'
 
 
 
@@ -13,7 +14,7 @@ import Scat from './Singlecat'
 import Form from './Form'
 import About from './About'
 import Search from './Search'
-import LogIn from './LogIn'
+import SignIn from './SignIn'
 import Register from './Register'
 import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
@@ -24,12 +25,14 @@ import Chat from './Chat'
 class App extends Component {
   render() {
     return (
+      <Authentication redirectUrl="/login">
       <Provider store={store}>
         <Router>
           <div>
             <Search />
+            
             <Switch>
-              <Route path="/login" component={LogIn} />
+              <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
@@ -44,6 +47,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
+      </Authentication>
     )
   }
 }

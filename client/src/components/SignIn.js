@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
-import { assignUsername } from '../actions/chatActions'
 
 import '../styles/loginStyles.css'
 
-class LogIn extends Component {
+class SignIn extends Component {
     state = {
         username: "",
         password: ""
@@ -16,10 +14,8 @@ class LogIn extends Component {
     
     handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username, this.state.password)
-        this.setState({
-            username: "",
-            password: ""
+        this.props.signin(this.state.username, this.state.password).then(()=> {
+            this.props.history.push('/')
         })
     }
 
@@ -61,5 +57,5 @@ function mapStateToProps(appState, ownProps) {
     } 
   }
   
-  export default  withAuth(connect(mapStateToProps)(LogIn))
+  export default  withAuth(connect(mapStateToProps)(SignIn))
 

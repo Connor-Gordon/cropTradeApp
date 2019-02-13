@@ -4,5 +4,6 @@
     "user": "farmer",
     "password": "",
     "database": "CropTradeApp"
-  }
+  },
+  "jwtsecret": "whatever"
 }

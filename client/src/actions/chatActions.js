@@ -16,11 +16,35 @@ export function addMessage(message) {
 
 }
 
+// registers username and pw to database
 export function assignUsername(username, password) {
-    return axios.post('/login', {
+    console.log("assign Username", username, password)
+    return axios.post('/register', {
         username: username,
         password: password})
   }
+
+  export function getToken(){
+      return axios.get('/login').then( resp => {
+
+          store.dispatch({
+              type: 'GET_TOKEN',
+              payload: resp.data
+          })
+      })
+  }
+
+  export function signInTest(username){
+    var promise = new Promise ((resolve, reject) => {
+        store.dispatch({
+            type: 'SIGN_IN',
+            payload: username
+        })
+
+        resolve()
+    })
+    return promise
+}
 
 
 socket.on('new message', (message) => {

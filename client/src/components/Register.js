@@ -14,11 +14,8 @@ class Register extends Component {
     
     handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username, this.state.password)
-        console.log("Register.js handle submit", this.state)
-        this.setState({
-            username: "",
-            password: ""
+        assignUsername(this.state.username, this.state.password).then(() => {
+            this.props.history.push('/profile')
         })
     }
 
