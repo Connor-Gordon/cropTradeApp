@@ -26,9 +26,9 @@ Router.get('/categories', (req, res, next) => {
 //single post page
 Router.get('/post/:id', (req, res, next) =>{
   let id = req.params.id
-  const sql = 'SELECT * FROM posts LEFT JOIN users WHERE id = ?'
+  const sql = 'SELECT * FROM posts WHERE id = ?'
   conn.query (sql, [id], (err, results, fields)=>{
-    res.json(results)
+    res.json(results[0])
   })
 })
 
