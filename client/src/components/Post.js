@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getPost } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 import '../styles/postStyles.css'
-import Footer from './Footer'
 
 class Post extends Component {
   componentDidMount() {
@@ -16,7 +15,7 @@ class Post extends Component {
         <div className="postmainCon"> 
           <div className="postCon">
             <div><h2>{this.props.post.title}</h2></div>
-            <Link to='/chatroom'>
+            <Link to={`/chatroom/${this.props.match.params.id}/${this.props.post.user_id}`}>
                <div className="replybutton">Chat</div>
             </Link>
             <div>{this.props.post.description}</div>
@@ -24,7 +23,6 @@ class Post extends Component {
             <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
           </div>
         </div>
-        <Footer /> 
       </div>
     )
   }

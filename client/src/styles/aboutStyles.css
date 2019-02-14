@@ -31,6 +31,101 @@ html {box-sizing: border-box;}
 .pinfo{
     margin: 0;
     padding-left: 10px;
-    
+}
 
+.comingSoon {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 3em;
+    height: 600px;
+    color: darkslategray;
+    padding: 5%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(72, 72, 128));
+}
+
+.contactUs {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    height: 600px;
+    color: darkslategray;
+    padding: 5%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(72, 72, 128));
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactInfo {
+    color: rgb(87, 155, 46)
+}
+
+a{
+    color: rgb(87, 155, 46);
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkslategray;
+}
+
+#contactForm {
+    display: flex;
+    list-style: none;
+    margin-left: -150px;
+    margin-top: -50px;
+}
+
+.contactInput {
+    margin: 10px;
+}
+
+#message {
+    height: 168px;
+    word-wrap: break-word;
+    margin-top: 41px;
+}
+
+.contactInput {
+    font-size: 17px;
+    text-decoration: none;
+    color: darkslategray;
+    text-transform: uppercase;
+    background: rgb(114, 189, 68);
+    padding: 10px;
+    border: 2px solid rgb(87, 155, 46);
+    ;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.contactInput:hover {
+    color: darkslategray;
+    background: white;
+    border-radius: 50px;
+    border-color: white;
+    transition: all 0.3s ease 0s;
+    outline: none; 
+}
+
+.contactInput:focus {
+    outline: none;
+}
+
+#contactUl {
+    list-style: none;
+    padding: none;
+}
+
+#contactButton {
+    width: 440px;
+    margin-left: -80px;
+}
+
+#contactButton:hover {
+    border-color: white;
+    color: white;
+    background: rgb(114, 189, 68);
+}
+
+h4 {
+    color: darkslategray
 }

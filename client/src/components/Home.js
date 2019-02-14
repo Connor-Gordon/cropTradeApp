@@ -4,7 +4,6 @@ import { getCategories } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 import '../styles/homeStyles.css'
 
-import Footer from './Footer'
 import '../styles/homeStyles.css'
 
 
@@ -18,10 +17,6 @@ class Home extends Component {
       <div className='superCon'>
 
         <div className="mainCon" >
-
-          <div className="appTitle">
-            <h2 className="CropTradeApp">Crop Trade App</h2>
-          </div>
           <div id="catCon">
             {this.props.categories.map(items=> (
             <div className="catdiv" key={items.id}>
@@ -36,7 +31,6 @@ class Home extends Component {
           
         </div>
         <div>
-        <Footer /> 
         </div>
       </div>
     )

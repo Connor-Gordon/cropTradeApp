@@ -56,7 +56,7 @@ class Search extends Component {
         loginButton = <div>
                         <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-inbox"></i> </Link>
                         <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
-                        <Link className="searchButton" to={`/Profile`}>{api.getProfile().username}</Link>
+                        <Link className="searchButton" to={`/profile/${api.getProfile().username}`}>{api.getProfile().username}</Link>
                         <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
                         
                     </div>
@@ -69,14 +69,20 @@ class Search extends Component {
     
     return (
       <div className='searchDiv'>
+        
         <div>
         <form id="searchForm" onSubmit={this.handleSubmit}>
-            <div>
-            {/* value from input will go to the state above, and on any change, run the handleChange fn to change the state and run the getSearch fn */}
-            <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
-            <button className="searchButton" type="submit">Submit</button>
+            <div ><Link id="cropTrade" to={`/`}>CropTrade</Link></div>
+            <div id="iconDiv">
+                <a target="blank"  className="icons" href="http://www.facebook.com"><i className="fa fa-facebook-square"></i></a> 
+                <a target="blank"  className="icons" href="http://www.twitter.com"><i className="fa fa-twitter-square"></i></a> 
+                <a target="blank"  className="icons" href="http://www.instagram.com"><i className="fa fa-instagram"></i></a>
             </div>
-            
+            <div>
+                {/* value from input will go to the state above, and on any change, run the handleChange fn to change the state and run the getSearch fn */}
+                <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
+                <button className="searchButton" type="submit">Submit</button>
+            </div>
             <div>
                 {/* insert if statement here, if user is logged in, display username w/link to profile
                     if no username, link to sign in page */}

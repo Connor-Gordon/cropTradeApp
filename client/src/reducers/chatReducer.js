@@ -2,7 +2,8 @@ const initialState = {
     messages: [], 
     username: '',
     password: '',
-    token: {}
+    token: {},
+    profile: {}
   }
   
   export default function (state = initialState, action) {
@@ -16,6 +17,8 @@ const initialState = {
         return {...state, token: action.payload}
       case "REGISTER":
         return {...state, username: action.payload, password: action.payload}
+      case "GET_PROFILE":
+        return {...state, profile: action.payload}
       default:
         return state
     }

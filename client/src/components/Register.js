@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { assignUsername } from '../actions/chatActions'
-import Footer from './Footer'
 import { withAuth } from '../lib/auth'
 
 import '../styles/loginStyles.css'
@@ -12,10 +11,12 @@ class Register extends Component {
         password: ""
     }
     
+
+    // make this push to either profile or successfully registered page
     handleSubmit= (e) => {
         e.preventDefault()
         assignUsername(this.state.username, this.state.password).then(() => {
-            this.props.history.push('/profile')
+            this.props.history.push('/')
         })
     }
 
@@ -39,7 +40,6 @@ class Register extends Component {
                 </div>
                 <div>
                 </div>
-                <Footer />
                 </div>
             )
 

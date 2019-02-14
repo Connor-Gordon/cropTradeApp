@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 import '../styles/listStyles.css'
 
-import Footer from './Footer'
 
 
 class List extends Component {
@@ -35,7 +34,6 @@ class List extends Component {
           </div>
         </div>
         <div>
-          <Footer /> 
         </div>
       </div>
     )

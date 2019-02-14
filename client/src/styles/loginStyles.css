@@ -5,18 +5,18 @@
     margin-right: 16px;
     font-size: 17px;
 
-    color: #20bf6b !important;
+    color: #20bf6b;
     background: #ffffff;
     padding: 10px;
-    border: 2px solid #20bf6b !important;
+    border: 2px solid #20bf6b;
     border-radius: 4px;
     display: inline-block;
   }
 
 .loginStuff:hover {
-  color: #494949 !important;
+  color: #494949;
   border-radius: 50px;
-  border-color: #494949 !important;
+  border-color: #494949;
   transition: all 0.3s ease 0s;
   outline: none;
   }

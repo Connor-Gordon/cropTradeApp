@@ -1,16 +1,17 @@
 html {box-sizing: border-box;}
-*, *::before, *::after {box-sizing: inherit;}
+*, *::before, *::after {box-sizing: inherit;
+}
 
 a{
     text-decoration-color:rgb(151, 84, 6)
 }
+
 #catCon{
     height: 600px;
     padding-top: 85px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
 
 .appTitle{
@@ -20,11 +21,7 @@ a{
     color: rgb(232, 240, 204);
     background: rgb(110, 168, 72);
     border-bottom:double rgb(79, 145, 89);
-  
-    
-    
 }
-
 
 .superCon{
     margin: auto;
@@ -34,12 +31,10 @@ a{
     margin: auto;
     border: double rgb(31, 100, 18);
     background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/92/17/2857e240b74eb0f.jpg);
+    min-height: 1000px;
     background-repeat: no-repeat;
     background-size: cover;
-   
 }
-
-
 
 .catName{
     width: 130px;
@@ -57,7 +52,6 @@ a{
     font-size: 19px;
     font-weight: bold;
 }
-
 
 .catdiv{
     margin: auto;

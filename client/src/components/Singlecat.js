@@ -4,7 +4,6 @@ import { getsingleCat } from '../actions/listActions';
 import { Link } from 'react-router-dom'
 import '../styles/postStyles.css'
 
-import Footer from './Footer'
 
 
 class Post extends Component {
@@ -22,7 +21,6 @@ class Post extends Component {
             ))}
             </div>
         </div>
-        <Footer />
       </div>
     )
   }

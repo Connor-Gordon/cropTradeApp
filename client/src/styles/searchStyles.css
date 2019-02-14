@@ -2,34 +2,40 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .searchDiv {
+  background-color: rgb(114, 189, 68);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#cropTrade {
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
 }
 
 #searchForm{
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #20bf6b !important;
 
 }
 .search {
-    width: 600px;
+    width: 400px;
     padding: 6px;
     border: none;
-    margin-top: 8px;
-    margin-right: 16px;
+    margin-right: 5px;
     font-size: 17px;
-
-    color: #20bf6b !important;
-    background: #ffffff;
+    color: darkslategray;
+    background: rgb(114, 189, 68);
     padding: 10px;
-    border: 2px solid #20bf6b !important;
+    border: 2px solid darkslategray;
     border-radius: 4px;
     display: inline-block;
   }
 
 .search:hover {
-  color: #494949 !important;
+  color: white;
+  background-color: white;
   border-radius: 50px;
-  border-color: #494949 !important;
+  border-color: white;
   transition: all 0.3s ease 0s;
   outline: none;
   }
@@ -42,7 +48,6 @@ html {box-sizing: border-box;}
   .searchUL {
     list-style: none;   
     position: absolute;
-    border: 1px solid #20bf6b !important;
     border-radius: 2px;
     background-color: rgba(255, 255, 255, 0.95);
     margin-top: 0px;
@@ -66,7 +71,7 @@ html {box-sizing: border-box;}
     display: flex;
     justify-content: space-around;
     text-decoration: none;
-    color: gray;
+    color: darkslategray;
   }
 
   .searchP {
@@ -81,19 +86,36 @@ html {box-sizing: border-box;}
   }
 
   .searchButton {
-    color: #20bf6b !important;
+    color: darkslategray;
+    background: rgb(114, 189, 68);
     text-transform: uppercase;
     padding: 10px;
-    border: 2px solid #20bf6b !important;
+    border: 2px solid darkslategray;
     border-radius: 4px;
     display: inline-block;
     text-decoration: none;
-    margin: 0px 10px;
+    margin: 0px 5px;
     }
     
     .searchButton:hover {
-    color: #494949 !important;
+    color: white;
     border-radius: 50px;
-    border-color: #494949 !important;
+    border-color: white;
     transition: all 0.3s ease 0s;
+    }
+
+    #iconDiv {
+      color: darkslategray;
+      font-size: 3em;
+      margin-top: -5px;
+    }
+    
+    .icons {
+      color: darkslategray;
+      margin: 0px 5px;
+    }
+
+    #cropTrade {
+      text-decoration: none;
+      color: white;
     }

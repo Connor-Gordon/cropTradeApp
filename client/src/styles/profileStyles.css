@@ -1,0 +1,43 @@
+#profileImg{
+    width: 70%;
+    border-radius: 50%;
+    border: 2px solid darkslategray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.profileUl {
+    list-style: none;
+}
+
+.profileDiv {
+    border: 1px solid darkslategray;
+    border-radius: 2px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profileLi {
+    font-size: 2em;
+    margin: 15px;
+    text-align: center;
+}
+
+#profile {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(72, 72, 128));
+    min-height: 600px;
+}
+
+#center {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 20px;
+}

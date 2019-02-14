@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {addMessage} from '../actions/chatActions'
-import Footer from './Footer'
 import '../styles/chatStyles.css'
+import { api } from '../lib/auth';
 
 class Chat extends Component {
     state = {
@@ -52,25 +52,26 @@ handleSubmit = e => {
   
   render() {
     return (
-      <div className="mainchatCon">
-          <div>
-            <div id='roomWrap'>
-              <div className="chatCon" ref='messages'>
-                {this.props.messages.map((message, i) => (
-                      <p key={message + '-message-' + i}>
-                        <span className="roomUsername">{this.props.username}</span>: {message.message}
-                      </p>
-                    ))}
+      <div>
+        <div className="mainchatCon">
+            <div>
+              <div id='roomWrap'>
+                <div className="chatCon" ref='messages'>
+                  {this.props.messages.map((message, i) => (
+                        <p key={message + '-message-' + i}>
+                          <span className="roomUsername">{api.getProfile().username}</span>: {message.message}
+                        </p>
+                      ))}
+                </div>
+              </div>
+              <div className="sendMessageCon">
+                <form className="chatsendbar" autoComplete="off" onSubmit={this.handleSubmit}>
+                  <input className="messagechatBar" type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
+                  <button className="sendchatbutton" type="submit">Send</button>
+                </form>
               </div>
             </div>
-            <div className="sendMessageCon">
-              <form className="chatsendbar" autoComplete="off" onSubmit={this.handleSubmit}>
-                <input className="messagechatBar" type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
-                <button className="sendchatbutton" type="submit">Send</button>
-              </form>
-            </div>
-          </div>
-          <Footer />
+        </div>
       </div>
     )
   }
@@ -80,7 +81,8 @@ function mapStateToProps(appState, ownProps) {
   return {
     messages: appState.chatReducer.messages,
     history: ownProps.history,
-    username: appState.chatReducer.username
+    username: appState.chatReducer.username,
+    token: appState.chatReducer.token
   }
 }
 

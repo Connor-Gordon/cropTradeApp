@@ -7,13 +7,24 @@ axios.defaults.baseURL = '/api'
 
 const socket = io.connect('http://localhost:3001')
 
+
+// pull post data and user data to make
+
+export function getProfile(username) {
+    return axios.get('/profile/' + username).then( resp => {
+        store.dispatch({
+            type: "GET_PROFILE",
+            payload: resp.data[0]
+        })
+    })
+}
+
 export function addMessage(message) {
     const username = store.getState().chatReducer.username
     socket.emit('new message', {
         username: username,
         message: message.message
     })
-
 }
 
 // registers username and pw to database

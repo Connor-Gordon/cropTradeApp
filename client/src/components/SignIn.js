@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
 
@@ -42,7 +41,6 @@ class SignIn extends Component {
                         </div>
                     </div>
                     
-                    <Footer />
                 </div>
             )
 
