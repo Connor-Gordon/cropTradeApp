@@ -89,11 +89,10 @@ Router.get('/profile/:username', (req, res, next) => {
 
 Router.post('/chatroom/:post_id/:user_id', (req, res, next) => {
 
-  const sql = `INSERT INTO messages (creator_id, message, sender_id) VALUES (?, ?, ?)`
+  const sql = `INSERT INTO messages (post_id, poster_id, message, sender_id) VALUES (?, ?, ?)`
   
-  const values = [req.params.user_id, req.body.message, ]
+  const values = [req.params.post_id, req.body.user_id, req.body.message, req.params.user_id]
   conn.query(sql, values, (err, results, fields) => {
-    console.log(this.props.profile)
     res.json({message: 'Message Sent'})
   })
 })

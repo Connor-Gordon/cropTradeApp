@@ -1,6 +1,6 @@
 .footer {
     border-top: 1px solid darkslategray;
-    background-color: rgb(114, 189, 68);
+    background-color: rgba(114, 189, 68, .7);
     height: 100px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-right: 40px;
@@ -17,7 +17,7 @@
     text-decoration: none;
     color: darkslategray;
     text-transform: uppercase;
-    background: rgb(114, 189, 68);
+    background-color: rgba(114, 189, 68, 0.7);
     padding: 10px;
     border: 2px solid darkslategray;
     border-radius: 4px;
@@ -29,5 +29,5 @@
     color: white;
     border-radius: 50px;
     border-color: white;
-    transition: all 0.3s ease 0s;
+    transition: all 0.7s ease 0s;
 }

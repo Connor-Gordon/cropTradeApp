@@ -88,11 +88,10 @@ a:hover {
     text-decoration: none;
     color: darkslategray;
     text-transform: uppercase;
-    background: rgb(114, 189, 68);
+    background: rgba(114, 189, 68, .8);
     padding: 10px;
-    border: 2px solid rgb(87, 155, 46);
-    ;
-    border-radius: 4px;
+    border: 1px solid darkslategray;
+    border-radius: 2px;
     display: inline-block;
     text-decoration: none;
 }
@@ -102,7 +101,7 @@ a:hover {
     background: white;
     border-radius: 50px;
     border-color: white;
-    transition: all 0.3s ease 0s;
+    transition: all 0.7s ease 0s;
     outline: none; 
 }
 

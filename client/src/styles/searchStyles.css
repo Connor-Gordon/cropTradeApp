@@ -2,7 +2,7 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .searchDiv {
-  background-color: rgb(114, 189, 68);
+  background-color: rgba(114, 189, 68, .8);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -15,7 +15,6 @@ html {box-sizing: border-box;}
 #searchForm{
   display: flex;
   justify-content: space-between;
-
 }
 .search {
     width: 400px;
@@ -24,7 +23,7 @@ html {box-sizing: border-box;}
     margin-right: 5px;
     font-size: 17px;
     color: darkslategray;
-    background: rgb(114, 189, 68);
+    background-color: rgba(114, 189, 68, .7);
     padding: 10px;
     border: 2px solid darkslategray;
     border-radius: 4px;
@@ -36,7 +35,7 @@ html {box-sizing: border-box;}
   background-color: white;
   border-radius: 50px;
   border-color: white;
-  transition: all 0.3s ease 0s;
+  transition: all 0.7s ease 0s;
   outline: none;
   }
 
@@ -87,7 +86,7 @@ html {box-sizing: border-box;}
 
   .searchButton {
     color: darkslategray;
-    background: rgb(114, 189, 68);
+    background: rgba(114, 189, 68, .8);
     text-transform: uppercase;
     padding: 10px;
     border: 2px solid darkslategray;
@@ -101,7 +100,7 @@ html {box-sizing: border-box;}
     color: white;
     border-radius: 50px;
     border-color: white;
-    transition: all 0.3s ease 0s;
+    transition: all 0.7s ease 0s;
     }
 
     #iconDiv {
@@ -115,7 +114,20 @@ html {box-sizing: border-box;}
       margin: 0px 5px;
     }
 
+    .icons:hover {
+      color: white;
+      border-radius: 50px;
+      border-color: white;
+      transition: all 0.7s ease 0s;
+    }
+
     #cropTrade {
       text-decoration: none;
       color: white;
+    }
+
+    #cropTrade:hover {
+      color: darkslategray;
+      font-size: 2.5em;
+      transition: all 0.7s ease 0s;
     }

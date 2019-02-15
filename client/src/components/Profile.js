@@ -40,7 +40,7 @@ componentDidMount(){
             <div>
               {this.props.posts.map(item => (
                 <div key={item.id + "posts"} className="grid">
-                    <Link  className="postLi" to={`/post/${item.id}`}> <img alt="noPic" className="gridimage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+                    <Link  className="gridLi" to={`/post/${item.id}`}> <img alt="noPic" className="gridImage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
                 </div>
               ))}
             </div>

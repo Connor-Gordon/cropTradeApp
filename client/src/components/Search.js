@@ -85,8 +85,7 @@ class Search extends Component {
                 <button className="searchButton" type="submit">Submit</button>
             </div>
             <div>
-                {/* insert if statement here, if user is logged in, display username w/link to profile
-                    if no username, link to sign in page */}
+                {/* refers to if else statement above */}
                 {loginButton}
             </div>
         </form>

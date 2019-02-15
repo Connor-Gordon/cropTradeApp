@@ -1,14 +1,11 @@
 import axios from 'axios'
 import store from '../store'
-import io from 'socket.io-client'
 
 
 
 
 
 axios.defaults.baseURL = '/api'
-
-const socket = io.connect('http://localhost:3001')
 
 
 // pull post data and user data to make
@@ -33,9 +30,8 @@ export function getMyPosts(username) {
 }
 
 // adds message to database
-
-export function addMessage(message, post_id, user_id) {
-    return axios.post('/chatroom/' + post_id + '/' + user_id, message)
+export function addMessage(message, poster_id, user_id) {
+    return axios.post('/chatroom/' + poster_id + '/' + user_id, message)
 }
 
 

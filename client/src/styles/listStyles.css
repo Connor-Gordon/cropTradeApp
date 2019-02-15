@@ -8,7 +8,6 @@ p{
 
 .listCon{
     margin:auto;
-    width: 900px;
    background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
    background-size: cover;
    background-repeat: no-repeat;
@@ -44,16 +43,16 @@ h1{
     color:rgb(151, 84, 6)
 }
 
-.postLi{
+.gridLi{
     color:rgb(39, 37, 37);
 }
 
-.postLi:hover{
+.gridLi:hover{
     font-size: 18px;
     color: rgb(37, 119, 8)
 }
 
-.gridimage{
+.gridImage{
     width: 210px;
     height: 150px;
 }
@@ -69,9 +68,32 @@ h1{
      display: flex;
      flex-wrap: wrap;
      justify-content: space-between;
-     
  }
 
  .gridMain{
      margin: auto;
+ }
+
+ .listLi {
+    display: flex;
+ }
+
+ .listLi:hover {
+
+ }
+
+ .listImage {
+    width: 10%;
+    height: 10%;
+ }
+
+ .list {
+
+ }
+
+ .listCon {
+ }
+
+ .listMain {
+     
  }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {addMessage} from '../actions/chatActions'
+import { withAuth } from '../lib/auth'
 import '../styles/chatStyles.css'
 import { api } from '../lib/auth';
 
@@ -9,11 +10,7 @@ class Chat extends Component {
         message:''
     }
 
-// componentWillMount(){
-//   if (this.props.username === ''){
-//     this.props.history.push('/')
-//   }
-// }
+
 componentWillUpdate() {
   //checks to see if the ref at messages has been scrolled all the way to the bottom
   var node = this.refs.messages
@@ -53,6 +50,7 @@ handleSubmit = e => {
   render() {
     return (
       <div>
+        <h3 name="user_id">{this.props.post.user_id}</h3>
         <div className="mainchatCon">
             <div>
               <div id='roomWrap'>
@@ -81,9 +79,10 @@ function mapStateToProps(appState, ownProps) {
   return {
     messages: appState.chatReducer.messages,
     history: ownProps.history,
-    username: appState.chatReducer.username,
-    token: appState.chatReducer.token
+    token: appState.chatReducer.token,
+    post: appState.listingsReducer.post,
+    profile: appState.chatReducer.profile
   }
 }
 
-export default connect(mapStateToProps)(Chat)
+export default withAuth(connect(mapStateToProps)(Chat))
