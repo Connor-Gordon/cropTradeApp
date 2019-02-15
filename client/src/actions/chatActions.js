@@ -3,6 +3,9 @@ import store from '../store'
 import io from 'socket.io-client'
 
 
+
+
+
 axios.defaults.baseURL = '/api'
 
 const socket = io.connect('http://localhost:3001')
@@ -19,22 +22,31 @@ export function getProfile(username) {
     })
 }
 
-export function addMessage(message) {
-    const username = store.getState().chatReducer.username
-    socket.emit('new message', {
-        username: username,
-        message: message.message
+// gets post for profile
+export function getMyPosts(username) {
+    return axios.get('/profile/' + username).then( resp => {
+        store.dispatch({
+            type: "GET_MY_POSTS",
+            payload: resp.data
+        })
     })
 }
 
+// adds message to database
+
+export function addMessage(message, post_id, user_id) {
+    return axios.post('/chatroom/' + post_id + '/' + user_id, message)
+}
+
+
 // registers username and pw to database
-export function assignUsername(username, password) {
-    console.log("assign Username", username, password)
-    return axios.post('/register', {
-        username: username,
-        password: password})
+export function assignUsername(profile) {
+    console.log("assign Username", profile)
+    return axios.post('/register', profile)
   }
 
+
+  // gets token for login
   export function getToken(){
       return axios.get('/login').then( resp => {
 
@@ -44,23 +56,3 @@ export function assignUsername(username, password) {
           })
       })
   }
-
-  export function signInTest(username){
-    var promise = new Promise ((resolve, reject) => {
-        store.dispatch({
-            type: 'SIGN_IN',
-            payload: username
-        })
-
-        resolve()
-    })
-    return promise
-}
-
-
-socket.on('new message', (message) => {
-    store.dispatch({
-        type:'ADD_MESSAGE',
-        payload: message
-    })
-})

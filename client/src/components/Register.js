@@ -7,16 +7,33 @@ import '../styles/loginStyles.css'
 
 class Register extends Component {
     state = {
-        username: "",
-        password: ""
+       
+        username: '',
+        password: '',
+        email: '',
+        phone: '',
+        picture:'',
+        location:'',
+        bio:''
+      
     }
     
 
     // make this push to either profile or successfully registered page
     handleSubmit= (e) => {
         e.preventDefault()
-        assignUsername(this.state.username, this.state.password).then(() => {
-            this.props.history.push('/')
+        assignUsername({
+            username: this.state.username,
+            password: this.state.password,
+            email: this.state.email,
+            phone: this.state.phone,
+            picture:this.state.picture,
+            location:this.state.location,
+            bio:this.state.bio
+        }).then(() => {
+            this.props.signin(this.state.username, this.state.password).then(()=>{
+                this.props.history.push('/')
+            })
         })
     }
 
@@ -27,23 +44,27 @@ class Register extends Component {
           } 
 
     render (){
-            return(
-                <div>
-                <div id="login">
-                    <h2>Choose a Username and Password</h2>
-                    <form onSubmit={this.handleSubmit} id="loginForm">
-                        <input name='username' className="loginStuff" type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
-                        <input name='password' className="loginStuff" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>
+        return(
+            <div>
+            <div id="login">
+                <h2>Choose a username to be recognized!</h2>
+                <form onSubmit={this.handleSubmit} id="loginForm">
+                    <input name='username' className="loginStuff" autoComplete='off' type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
+                    <input name='password' className="loginStuff" autoComplete='off' type="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/><br/>
+                    <input name='email' className="loginStuff" autoComplete='off' type="email" value={this.state.email} onChange={this.handleChange} placeholder="Enter a Valid Email"/>
+                    <input name='phone' className="loginStuff" autoComplete='off' type="tel" value={this.state.phone} onChange={this.handleChange} placeholder="Phone-number"/><br/>
+                    <input name='location' className="loginStuff" autoComplete='off' type="text" value={this.state.location} onChange={this.handleChange} placeholder="Enter a Zipcode"/>
+                    <input className="loginStuff" autoComplete='off' type="url" name="picture" onChange={this.handleChange} placeholder="Photo URL" value={this.state.picture}/><br/>
+                    <textarea className="loginStuff" autoComplete='off' name="bio" onChange={this.handleChange} placeholder="Bio" value={this.state.bio}></textarea><br/>
+                    <button className="loginStuff" type="submit">Submit</button>
+                </form>
+            </div>
+            <div>
+            </div>
+            </div>
+        )
 
-                        <button className="loginStuff" type="submit">Submit</button>
-                    </form>
-                </div>
-                <div>
-                </div>
-                </div>
-            )
-
-    }
+}
 }
 
 function mapStateToProps(appState, ownProps) {

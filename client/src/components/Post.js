@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getPost } from '../actions/listActions';
 import { Link } from 'react-router-dom'
+import { withAuth, api} from '../lib/auth'
+import { getProfile } from '../actions/chatActions'
+
 import '../styles/postStyles.css'
 
 class Post extends Component {
   componentDidMount() {
     getPost(this.props.match.params.id)
+    getProfile(api.getProfile().username)
   }
   
   render() {
@@ -15,12 +19,12 @@ class Post extends Component {
         <div className="postmainCon"> 
           <div className="postCon">
             <div><h2>{this.props.post.title}</h2></div>
-            <Link to={`/chatroom/${this.props.match.params.id}/${this.props.post.user_id}`}>
-               <div className="replybutton">Chat</div>
+            <Link to={`/chatroom/${this.props.match.params.id}/${this.props.profile.user_id}`}>
+               <div className="replybutton">Message Farmer about this post</div>
             </Link>
             <div>{this.props.post.description}</div>
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
-            <div><img alt="imagenotfound" className="photo" src={this.props.post.photo}/></div>
+            <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
           </div>
         </div>
       </div>
@@ -29,10 +33,10 @@ class Post extends Component {
 }
 
 function mapStateToProps(appState) {
-  
+  console.log(appState)
   return {
-   post: appState.listingsReducer.post
-  }
+   post: appState.listingsReducer.post,
+   profile: appState.chatReducer.profile
 }
-
-export default connect(mapStateToProps)(Post)
+}
+export default withAuth(connect(mapStateToProps)(Post))

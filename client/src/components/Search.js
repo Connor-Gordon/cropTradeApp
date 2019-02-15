@@ -16,6 +16,7 @@ class Search extends Component {
   }
 
   componentDidMount(){
+
   }
   // Prevents refreshing automatically
   // Pull the getSearch fn from the actions and pass it the value from the search input,

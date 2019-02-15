@@ -74,12 +74,32 @@ Router.get('/search/:searchResults', (req, res, next) =>{
 
 Router.get('/profile/:username', (req, res, next) => {
   let username = req.params.username
-  const sql = `SELECT * FROM users WHERE username = ?`
+  const sql = `Select  u.*, p.*
+                from users u 
+                left join posts p
+                on u.id = p.user_id
+                where u.username = ?`
 
   conn.query(sql, [username], (err, results, fields) => {
     res.json(results)
   })
 })
+
+// post message to message database
+
+Router.post('/chatroom/:post_id/:user_id', (req, res, next) => {
+
+  const sql = `INSERT INTO messages (creator_id, message, sender_id) VALUES (?, ?, ?)`
+  
+  const values = [req.params.user_id, req.body.message, ]
+  conn.query(sql, values, (err, results, fields) => {
+    console.log(this.props.profile)
+    res.json({message: 'Message Sent'})
+  })
+})
+
+
+// SELECT * FROM posts LEFT JOIN users on posts.user_id = users.id WHERE user_id = ?
 
 
 // // chat room creation
@@ -102,30 +122,10 @@ Router.get('/profile/:username', (req, res, next) => {
   // will bring in the user id to the post for us to create chat/direct message
   // can also use to display post info in chat
 
-  
-
-
-// post message
-// Insert into messages join users on creator_id and user id
 
 // get message
 // Select * from messages join users where creator_id = userid && recipient_id = userid
 
-// purely and example
-
-// Router.get('/posts/:category/:id', (req, res, next) =>{
-//   let id = req.params.id
-//   // const sql = 'SELECT photo, title, description FROM posts LEFT JOIN categories ON categories.id = posts.parent_id WHERE categories.id = ?'
-
-//   const sql = `select p.title, p.description, p.id, c.parent_id as parent_id
-//   from posts p 
-//   left join categories c ON p.cat_id = c.id
-//   where p.cat_id = ? or c.parent_id = ?`
-  
-//   conn.query (sql, [id, id], (err, results, fields) =>{
-//     res.json(results)
-//   })
-//subcategories-posts
 
 
 Router.get('/:posts/:id', (req, res, next) =>{

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getProfile } from '../actions/chatActions';
-import { getPosts } from '../actions/listActions'
-// import { Link } from 'react-router-dom'
+import { getProfile, getMyPosts } from '../actions/chatActions';
+import { Link } from 'react-router-dom'
 
 
 import '../styles/aboutStyles.css'
@@ -17,8 +16,7 @@ class Profile extends Component {
   
 componentDidMount(){
   getProfile(this.props.match.params.username)
-  getPosts(this.props.match.params.slug, this.props.match.params.id)
-
+  getMyPosts(this.props.match.params.username)
 }
 
 
@@ -39,13 +37,13 @@ componentDidMount(){
           <div>
             <h3>Posts by this user:</h3>
             {/* use user_id to display all posts by this user, code below stolen from list.js as syntax example */}
-            {/* <div>
+            <div>
               {this.props.posts.map(item => (
-                <div key={item.id} className="grid">
+                <div key={item.id + "posts"} className="grid">
                     <Link  className="postLi" to={`/post/${item.id}`}> <img alt="noPic" className="gridimage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
         
@@ -58,7 +56,7 @@ function mapStateToProps(appState) {
   console.log(appState)
   return {
     profile: appState.chatReducer.profile,
-    posts: appState.listingsReducer.posts
+    posts: appState.chatReducer.myPosts
   }
 }
 export default connect(mapStateToProps)(Profile)
