@@ -2,7 +2,6 @@
 
 import express from 'express'
 import conn from '../utils/db'
-import sha512 from 'js-sha512'
 import jwt from 'jsonwebtoken'
 import config from 'config'
 // set express router to the constant 'Router'

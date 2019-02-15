@@ -43,6 +43,8 @@ class App extends Component {
               <Route path="/form/:slug/:id" component={Form} />
               <Route path="/contactus"  component={ContactUs} />
               <Route path="/comingSoon" component={ComingSoon} />
+              <Route path="/post/:id"  component={Post} />
+              <Route path="/form/:slug/:id" component={Form} />
               <Route path="/profile/:username" component={Profile} />
               <Route path="/:slug/:id"  component={List} /> 
             </Switch>
