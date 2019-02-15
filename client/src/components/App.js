@@ -37,7 +37,7 @@ class App extends Component {
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
-              <Route path="/chatroom" component={Chat} />
+              <Route path="/chatroom/:receiver_id/:user_id" component={Chat} />
               <Route path="/post/:id"  component={Post} />
               <Route path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
