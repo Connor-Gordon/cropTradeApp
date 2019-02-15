@@ -20,6 +20,7 @@ export default function (state = initialState, action) {
       return {...state, scat: action.payload}   
     case 'GET_SEARCH':
       return {...state, searchResults: action.payload}
+    
     default:
       return state
   }

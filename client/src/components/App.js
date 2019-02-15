@@ -18,9 +18,11 @@ import SignIn from './SignIn'
 import Register from './Register'
 import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
+import Profile from './Profile'
 
 // import { withAuth } from '../lib/auth';
 import Chat from './Chat'
+import Footer from './Footer';
 
 class App extends Component {
   render() {
@@ -30,20 +32,23 @@ class App extends Component {
         <Router>
           <div>
             <Search />
-            
             <Switch>
+              <Route exact path="/"  component={Home} />
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
-              <Route exact path="/"  component={Home} />
               <Route path="/about" component={About} />
               <Route path="/chatroom" component={Chat} />
+              <Route path="/post/:id"  component={Post} />
               <Route path="/posts/:slug/:id"  component={Scat} />
+              <Route path="/form/:slug/:id" component={Form} />
               <Route path="/contactus"  component={ContactUs} />
               <Route path="/comingSoon" component={ComingSoon} />
               <Route path="/post/:id"  component={Post} />
               <Route path="/form/:slug/:id" component={Form} />
+              <Route path="/profile/:username" component={Profile} />
               <Route path="/:slug/:id"  component={List} /> 
             </Switch>
+            <Footer />
           </div>
         </Router>
       </Provider>

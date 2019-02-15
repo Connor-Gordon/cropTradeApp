@@ -7,19 +7,18 @@ import '../styles/footerStyles.css'
 
 class Footer extends Component {
   
+
+  
   render() {
     return (
-      <div >
-        <div className='footer'>
+      <div className='footer'>
             <ul id='footerUl'>
                 <li><Link className="navName" to={'/'}>Home</Link></li>
-                <li><Link className="navName" to={"/About"}>About Us</Link></li>
-                <li><Link className="navName" to={'/ComingSoon'}>Profile</Link></li>
-                <li><Link className="navName" to={'/ComingSoon'}>Settings</Link></li>
-                <li><Link className="navName" to={'/ContactUs'}>Contact Us</Link></li>
+                <li><Link className="navName" to={"/about"}>About Us</Link></li>
+                <li><Link className="navName" to={'/comingsoon'}>Settings</Link></li>
+                <li><Link className="navName" to={'/contactus'}>Contact Us</Link></li>
                 <li><a className="navName" href="#searchForm">Top of Page</a></li>
             </ul>
-        </div>
       </div>
     )
   }

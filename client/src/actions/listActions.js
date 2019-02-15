@@ -21,6 +21,16 @@ export function getPosts(slug,id) {
   })
 }
 
+// export function getMyPosts(id){
+// axios.get('/profile/posts/' + id).then(resp => {
+//   store.dispatch({
+//     type: 'GET_MY_POSTS',
+//     payload: resp.data
+//   })
+// })
+// }
+
+
 export function getPost(id) {
   axios.get('/post/' + id).then(resp => {
     store.dispatch({

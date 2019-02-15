@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { withAuth } from '../lib/auth'
 
@@ -32,7 +31,7 @@ class SignIn extends Component {
                         <h2>Enter Username and Password to Log In</h2>
                         <form onSubmit={this.handleSubmit} id="loginForm">
                             <input name='username' className="loginStuff" type="text" value={this.state.username} onChange={this.handleChange} placeholder="Enter a Username"/>
-                            <input name='password' className="loginStuff" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>
+                            <input name='password' className="loginStuff" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter a Password"/>
 
                             <button className="loginStuff" type="submit">Submit</button>
                         </form>
@@ -42,7 +41,6 @@ class SignIn extends Component {
                         </div>
                     </div>
                     
-                    <Footer />
                 </div>
             )
 
