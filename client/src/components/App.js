@@ -18,6 +18,7 @@ import SignIn from './SignIn'
 import Register from './Register'
 import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
+import Inbox from './Inbox'
 import Profile from './Profile'
 
 // import { withAuth } from '../lib/auth';
@@ -44,6 +45,7 @@ class App extends Component {
               <Route path="/contactus"  component={ContactUs} />
               <Route path="/comingSoon" component={ComingSoon} />
               <Route path="/post/:id"  component={Post} />
+              <Route path="/inbox/:user_id" component={Inbox} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route path="/profile/:username" component={Profile} />
               <Route path="/:slug/:id"  component={List} /> 
