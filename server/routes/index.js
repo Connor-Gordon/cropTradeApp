@@ -119,7 +119,7 @@ Router.get('/chatroom/:receiver_id/:user_id', (req, res, next) => {
   let sender_id = req.params.user_id
 
   const sql = `SELECT * 
-              from messages 
+              FROM messages 
               LEFT JOIN users on messages.sender_id = users.id
               WHERE messages.receiver_id = ? AND messages.sender_id = ?`
 
@@ -127,6 +127,19 @@ Router.get('/chatroom/:receiver_id/:user_id', (req, res, next) => {
     res.json(results)
   })
 })
+
+
+// work on this
+
+// // gets new messages for inbox page
+
+// Router.get('/inbox/:user_id/', (req, res, next) => {
+//   let user_id = req.params.user_id
+//   const sql = `SELECT *
+//               FROM messages
+//               LEFT JOIN users on messages.sender_id = users.id
+//               WHERE messages.receiver_id = ? and messages.sender_id = ?`
+// })
 
 
 

@@ -36,7 +36,6 @@ handleChange = e => {
 
 handleSubmit = e => {
   e.preventDefault()
-  
   if(this.state.message !== "" && this.state.message !== " ") {
     addMessage(
         {message: this.state.message},
