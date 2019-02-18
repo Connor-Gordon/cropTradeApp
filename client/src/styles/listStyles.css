@@ -91,9 +91,14 @@ h1{
 
  }
 
- .listCon {
+ .listiCon {    
+    margin:auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
  }
 
  .listMain {
      
+     background: none;
  }

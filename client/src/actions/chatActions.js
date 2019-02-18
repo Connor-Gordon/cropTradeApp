@@ -33,7 +33,7 @@ export function getProfile(username) {
     })
 }
 
-// gets post for logged in profile
+// gets posts for logged in profile
 
 export function getMyPosts(username) {
     return axios.get('/profile/' + username).then( resp => {
@@ -43,6 +43,8 @@ export function getMyPosts(username) {
         })
     })
 }
+
+
 
 ///////// messages ///////////////////
 

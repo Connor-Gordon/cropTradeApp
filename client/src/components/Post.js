@@ -12,8 +12,20 @@ class Post extends Component {
     getPost(this.props.match.params.id)
     getProfile(api.getProfile().username)
   }
+
   
   render() {
+
+    let deletePost= ""
+  // delete post
+  if(this.props.profile.user_id = this.props.post.user_id){
+    deletePost = <div>
+      <button>Remove this Posting</button>
+    </div>
+  } else {
+    deletePost = <div></div>
+  }
+
     return (
       <div>
         <div className="postmainCon"> 
@@ -26,6 +38,7 @@ class Post extends Component {
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
             <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
           </div>
+          {deletePost}
         </div>
       </div>
     )

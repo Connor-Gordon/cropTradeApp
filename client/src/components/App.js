@@ -20,6 +20,7 @@ import ComingSoon from './ComingSoon'
 import Inbox from './Inbox'
 import ContactUs from './ContactUs'
 import Profile from './Profile'
+import Welcome from './Welcome'
 
 // import { withAuth } from '../lib/auth';
 import Chat from './Chat'
@@ -31,10 +32,12 @@ class App extends Component {
       <Authentication redirectUrl="/login">
       <Provider store={store}>
         <Router>
-          <div>
+          <div>              
             <Search />
+            <Route exact path="/"  component={Welcome} />
             <Switch>
-              <Route exact path="/"  component={Home} />
+
+              <Route path="/Home" component={Home} />
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />

@@ -33,7 +33,7 @@ handleChange = e => {
 
   render() {
     let Main = this.state.Main ? "gridMain" : "listMain";
-    let Con = this.state.Con ? "gridCon" : "listCon";
+    let Con = this.state.Con ? "gridCon" : "listiCon";
     let Div = this.state.Div ? "grid" : "list";
     let Li = this.state.Li ? "gridLi" : "listLi";
     let Image = this.state.Image ? "gridImage" : "listImage";
