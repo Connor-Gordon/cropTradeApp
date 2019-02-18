@@ -3,57 +3,50 @@ html {box-sizing: border-box;}
 
 p{
     margin:0;
-    
 }
 
-.listCon{
+.listCon {
     margin:auto;
    background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
    background-size: cover;
    background-repeat: no-repeat;
     border-radius: 10px;
-    border: double gray;
 }
 .bodyCon{
-    width: 700px;
-    margin:auto;
+    width: 745px;
+    margin:auto;  
 }
 
-.topbar{
+.postbodyCon{
     display: flex;
-}
-
-.listsearchbar{
-    width: 700px;
-    margin: auto;
-    border: 1px solid gray;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    height: 30px;
-    font-style: 25px;
+    justify-content: space-between;
 }
 
 .catname{
     text-transform: capitalize;
     color: rgb(82, 110, 6);
-    width: 150px;
+    width: 250px;
 }
 
 h1{
     color:rgb(151, 84, 6)
 }
+.itemListName{
+    text-align: center;
+}
 
 .gridLi{
     color:rgb(39, 37, 37);
+    overflow: hidden;
 }
 
 .gridLi:hover{
-    font-size: 18px;
+    
     color: rgb(37, 119, 8)
 }
 
 .gridImage{
-    width: 210px;
+    width: 225px;
     height: 150px;
 }
 
@@ -62,38 +55,50 @@ h1{
     flex-direction: column;
     border: 1px solid rgb(40, 66, 40);
     border-radius: 5px;
-    margin:5px;
+    margin:5px;  
 }
- .gridCon{
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-between;
- }
 
- .gridMain{
-     margin: auto;
- }
-
- .listLi {
+.gridCon{
     display: flex;
- }
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
- .listLi:hover {
+.gridMain{
+    margin: auto;
+}
 
- }
+.listLi {
+    display: flex;
+    margin-top:10px;
+    border-bottom: 1px solid grey;
+    padding: 5px;
+    width: 500px;
+    margin: auto;
+}
 
- .listImage {
-    width: 10%;
-    height: 10%;
- }
+.listImage {
+    width: 60px;
+    height: 55px;
+    margin-right:5px;
+}
 
- .list {
+.listiCon {
+    margin:auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+     border-radius: 10px;
+}
 
- }
+#switchButton{
+    background-color: rgb(54, 78, 79);
+    color: white;
+    height:25px;
+    outline: none;
+}
 
- .listCon {
- }
+#switchButton:hover{
+    background-color: rgb(82, 129, 41);
+}
 
- .listMain {
-     
- }
+

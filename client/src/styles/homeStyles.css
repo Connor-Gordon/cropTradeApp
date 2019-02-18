@@ -1,7 +1,9 @@
 html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;
 }
-
+ * {
+     font-family: Arial, Helvetica, sans-serif;
+ }
 a{
     text-decoration-color:rgb(151, 84, 6)
 }

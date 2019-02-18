@@ -33,7 +33,7 @@ handleChange = e => {
 
   render() {
     let Main = this.state.Main ? "gridMain" : "listMain";
-    let Con = this.state.Con ? "gridCon" : "listCon";
+    let Con = this.state.Con ? "gridCon" : "listiCon";
     let Div = this.state.Div ? "grid" : "list";
     let Li = this.state.Li ? "gridLi" : "listLi";
     let Image = this.state.Image ? "gridImage" : "listImage";
@@ -41,22 +41,25 @@ handleChange = e => {
 
     return (
 
-      <div className="listCon">
+      <div className="listCon ">
         <div className="bodyCon">
           <h1 className="catname">{this.props.match.params.slug}</h1> 
-          <div className="bodyCon">
-                  <div className="addpostButton"> 
+          <div className="postbodyCon">
+                  <div className="addpostButtonCon"> 
                       <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add a post to this category!</Link>
                   </div>
                   <div>
-                    <button onClick={this.handleChange}><i className={Icon}></i></button>
+                    <button id="switchButton" onClick={this.handleChange}><i className={Icon}></i> Switch View</button>
                   </div>
           </div>
           <div className={Main}>
               <div className={Con}>
                   {this.props.posts.map(item => (
                     <div key={item.id} className={Div}>
-                       <Link  className={Li} to={`/post/${item.id}`}> <img alt="noPic" className={Image} src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+                       <Link  className={Li} to={`/post/${item.id}`}> <img className={Image} src={item.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn2.iconfinder.com/data/icons/orange-emoticon/512/Orange_Emoticon-03-512.png"}}/><p className="itemListName">{item.title} (Las Vegas)</p> </Link> 
+                       
+
+
                     </div>
                   ))}
               </div>

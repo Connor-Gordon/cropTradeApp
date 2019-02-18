@@ -12,10 +12,10 @@ html {box-sizing: border-box;}
 }
 
 .postCon{
-    width: 650px;
-    padding: 10px;
+    width: 820px;
+    padding: 30px;
     margin: auto;
-    background-color: rgba(180, 184, 184, 0.4);
+    background-color: rgba(195, 199, 199, 0.3);
     border-radius: 10px;
     
 }
@@ -23,17 +23,21 @@ html {box-sizing: border-box;}
 
 .replybutton{
     margin: 20px 0 20px 0;
-    background: rgb(236, 168, 179);
-    border: 1px solid rgb(240, 111, 133);
-    color: rgb(68, 65, 65);
+    width: 340px;
+    background: rgb(123, 143, 230);
+    border: 1px solid rgb(54, 29, 196);
+    color: rgb(255, 255, 255);
+    text-align: center
 
 }
 
 .photo{
     width:350px;
+    margin-bottom: 20px;
 }
 
 .freshBy{
     margin:10px 0 10px 0;
     color: blue
 }
+

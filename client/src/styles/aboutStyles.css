@@ -2,7 +2,7 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .aboutUs{
-    width: 1000px;
+    width: 100%;
     margin: auto;
     padding: 15px;
     background-image: url(http://www.teigncvs.org.uk/wp-content/uploads/2017/01/blue-green-polygon.jpg);
@@ -10,10 +10,10 @@ html {box-sizing: border-box;}
     background-size: cover;
 }
 .aboutCon{
-    width: 875px;
+    width: 1000px;
     margin: auto;
-    padding: 10px;
-    background-color: rgba(206, 204, 202, .5);
+    padding: 25px;
+    background-color: rgba(206, 204, 202, .3);
     border-radius:10px;
 }
 
@@ -127,4 +127,9 @@ a:hover {
 
 h4 {
     color: darkslategray
+}
+
+.aboutUsPic{
+    margin: 15px 5px 0 0;
+    width: 200px;
 }
