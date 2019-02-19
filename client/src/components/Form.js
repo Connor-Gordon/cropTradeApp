@@ -43,7 +43,6 @@ class Form extends Component {
   }
 
   fileSelectedHandler = e => {
-    console.log(e.target.files[0])
     this.setState({
       selectedFile: e.target.files[0]
     })

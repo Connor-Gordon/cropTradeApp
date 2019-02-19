@@ -12,14 +12,7 @@ export function getCategories() {
   })
 }
 
-export function getPosts(slug,id) {
-  axios.get('/'+ slug + '/' + id).then(resp => {
-    store.dispatch({
-      type: 'GET_POSTS', 
-      payload: resp.data
-    })
-  })
-}
+
 
 // export function getMyPosts(id){
 // axios.get('/profile/posts/' + id).then(resp => {
@@ -70,4 +63,13 @@ export function getSearch(searchResults) {
 
 export function getForm(post) {
   return axios.post('/form/',post)
+}
+
+export function getPosts(slug,id) {
+  axios.get('/'+ slug + '/' + id).then(resp => {
+    store.dispatch({
+      type: 'GET_POSTS', 
+      payload: resp.data
+    })
+  })
 }

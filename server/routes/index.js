@@ -53,7 +53,7 @@ Router.get('/posts/:category/:id', (req, res, next) =>{
   from posts p 
   left join categories c ON p.cat_id = c.id
 
-  where p.cat_id = ? or c.parent_id = ? AND p.is_active = 0
+  where p.cat_id = ? or c.parent_id = ?
   ORDER BY p.time_created`
   conn.query (sql, [id, id], (err, results, fields) =>{
     res.json(results)
@@ -158,7 +158,7 @@ Router.get('/chatroom/:receiver_id/:user_id', (req, res, next) => {
 
 Router.get('/:posts/:id', (req, res, next) =>{
   let id = req.params.id
-  const sql = 'SELECT * FROM posts WHERE cat_id = ? AND is_active=0'
+  const sql = 'SELECT * FROM posts WHERE cat_id = ?'
 
   conn.query (sql, [id], (err, results, fields)=>{
     

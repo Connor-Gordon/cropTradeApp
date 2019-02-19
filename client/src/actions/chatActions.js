@@ -56,7 +56,7 @@ export function getMessages(receiver_id, user_id){
 // adds message to database
 
 export function addMessage(message, receiver_id, user_id) {
-    console.log(message)
+    
     return axios.post('/chatroom/' + receiver_id + '/' + user_id, message)
 }
 
@@ -66,7 +66,7 @@ export function addMessage(message, receiver_id, user_id) {
 // registers username and pw to database
 
 export function assignUsername(profile) {
-    console.log("assign Username", profile)
+    
     return axios.post('/register', profile)
   }
 

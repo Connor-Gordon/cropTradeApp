@@ -81,7 +81,6 @@ handleSubmit = e => {
 }
 
 function mapStateToProps(appState, ownProps) { 
-  console.log("chat", appState)
   return {
     messages: appState.chatReducer.messages,
     history: ownProps.history,

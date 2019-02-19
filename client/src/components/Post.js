@@ -56,7 +56,6 @@ class Post extends Component {
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
   return {
    post: appState.listingsReducer.post,
    profile: appState.chatReducer.profile

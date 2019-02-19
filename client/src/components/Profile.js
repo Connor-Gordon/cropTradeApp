@@ -53,7 +53,6 @@ componentDidMount(){
 }
 
 function mapStateToProps(appState) {
-  console.log(appState)
   return {
     profile: appState.chatReducer.profile,
     posts: appState.chatReducer.myPosts

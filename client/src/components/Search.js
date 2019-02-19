@@ -111,7 +111,6 @@ class Search extends Component {
 }
 
 function mapStateToProps(appState) {
-    console.log(appState)
   return {
     searchResults: appState.listingsReducer.searchResults,
     token: appState.chatReducer.token

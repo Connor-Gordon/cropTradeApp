@@ -170,7 +170,6 @@ export class Authentication extends Component {
         })
         resolve()
       }).catch(err => {
-        console.log("Error!", err)
       })
     })
 
