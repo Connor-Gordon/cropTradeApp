@@ -23,7 +23,7 @@ html {box-sizing: border-box;}
     margin-right: 5px;
     font-size: 17px;
     color: darkslategray;
-    background-color: rgba(114, 189, 68, .7);
+    background-color: white;
     padding: 10px;
     border: 2px solid darkslategray;
     border-radius: 4px;
@@ -86,7 +86,7 @@ html {box-sizing: border-box;}
 
   .searchButton {
     color: darkslategray;
-    background: rgba(114, 189, 68, .8);
+    background: white;
     text-transform: uppercase;
     padding: 10px;
     border: 2px solid darkslategray;
@@ -97,7 +97,7 @@ html {box-sizing: border-box;}
     }
     
     .searchButton:hover {
-    color: white;
+    color: darkslategray;
     border-radius: 50px;
     border-color: white;
     transition: all 0.7s ease 0s;

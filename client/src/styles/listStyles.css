@@ -8,15 +8,20 @@ p{
 
 .listCon{
     margin:auto;
+    height: 50em;
    background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
    background-size: cover;
    background-repeat: no-repeat;
     border-radius: 10px;
-    border: double gray;
 }
 .bodyCon{
-    width: 700px;
-    margin:auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bodyCon2{
+    margin: auto;
 }
 
 .topbar{
@@ -36,7 +41,6 @@ p{
 .catname{
     text-transform: capitalize;
     color: rgb(82, 110, 6);
-    width: 150px;
 }
 
 h1{
@@ -68,10 +72,13 @@ h1{
      display: flex;
      flex-wrap: wrap;
      justify-content: space-between;
+     overflow: scroll;
+     height: 30em;
  }
 
  .gridMain{
      margin: auto;
+     width: 70%;
  }
 
  .listLi {
@@ -87,18 +94,41 @@ h1{
     height: 10%;
  }
 
- .list {
-
- }
-
  .listiCon {    
     margin:auto;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+    height: 35em;
+    overflow: scroll;
+    border: 1px solid gray;
  }
 
+.list {
+}
+
  .listMain {
-     
      background: none;
+     width: 70%;
+     margin: auto;
  }
+
+ .postButtons {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 40px;
+ }
+ 
+ .toggleButton {
+     background: darkslategray;
+     color: white;
+     width: 50px;
+     height: 50px;
+     margin: 20px;
+ }
+
+ .addpostButton {
+    margin-left: auto;
+    margin-right: auto;
+ }
+

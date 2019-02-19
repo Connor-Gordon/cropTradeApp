@@ -1,24 +1,51 @@
 form{
     margin: auto;
-    padding:20px;
+    padding:10px;
    }
    
    
-.textarea{
-       width:450px;
-       margin-top: 10px;
-       height: 200px;
-   }
-.image{
-       margin-bottom: 10px;
-       width:450px;
-   }
-   
- .formtitle{
-       width:450px;
-   }
+label {
+    margin: auto;
+    padding: 8px;
+}
 
-   .submit{
-    margin-top: 10px;
-   }
-   
+.textarea {
+    height: 8em;
+}
+
+.image, .textarea, .submit, .formtitle, .fdate {
+    margin: 20px;
+    font-size: 17px;
+    text-decoration: none;
+    color: darkslategray;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border: 1px solid darkslategray;
+    border-radius: 2px;
+    text-decoration: none;
+    margin: auto;
+    width: 25%;
+}
+
+.contactInput:hover, .image:hover, .textarea:hover, .submit:hover, .formtitle:hover{
+    color: darkslategray;
+    background: white;
+    border-radius: 20px;
+    border-color: darkslategray;
+    transition: all 0.7s ease 0s;
+    outline: none; 
+}
+
+.formDiv {
+    height: 50em;
+}
+
+.formForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#formA {
+    margin: auto;
+}

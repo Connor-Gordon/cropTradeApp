@@ -17,6 +17,7 @@ class Home extends Component {
       <div className='superCon'>
 
         <div className="mainCon" >
+          <h2 id="homeH2">Search By Category</h2>
           <div id="catCon">
             {this.props.categories.map(items=> (
             <div className="catdiv" key={items.id}>

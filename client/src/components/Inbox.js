@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withAuth } from '../lib/auth'
-import { api } from '../lib/auth';
 
 
 import '../styles/aboutStyles.css'
@@ -18,9 +17,9 @@ state = {
   render() {
     return (
       <div className=''>
-        <h3>Your new messages will be here:</h3>
+        
         <div className="newMessages">
-          
+          <h3>Your new messages will be here:</h3>
         </div>
       </div>
     )

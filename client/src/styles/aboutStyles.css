@@ -2,18 +2,16 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .aboutUs{
-    width: 1000px;
     margin: auto;
     padding: 15px;
     background-image: url(http://www.teigncvs.org.uk/wp-content/uploads/2017/01/blue-green-polygon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 50em;
 }
 .aboutCon{
-    width: 875px;
     margin: auto;
     padding: 10px;
-    background-color: rgba(206, 204, 202, .5);
     border-radius:10px;
 }
 
@@ -36,7 +34,7 @@ html {box-sizing: border-box;}
 .comingSoon {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 3em;
-    height: 600px;
+    height: 16.5em;
     color: darkslategray;
     padding: 5%;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(72, 72, 128));
@@ -83,6 +81,10 @@ a:hover {
     margin-top: 41px;
 }
 
+.newMessages {
+    height: 50em;
+}
+
 .contactInput {
     font-size: 17px;
     text-decoration: none;
@@ -99,7 +101,7 @@ a:hover {
 .contactInput:hover {
     color: darkslategray;
     background: white;
-    border-radius: 50px;
+    border-radius: 20px;
     border-color: white;
     transition: all 0.7s ease 0s;
     outline: none; 

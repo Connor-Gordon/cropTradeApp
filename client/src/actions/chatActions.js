@@ -5,11 +5,6 @@ import { api} from '../lib/auth'
 
 axios.defaults.baseURL = '/api'
 
-const newChats = setInterval(() => {
-  getMessages()
-}, 5000)
-
-
 // notifcation of new message
 
 export function getNewMessages() {

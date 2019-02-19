@@ -16,15 +16,16 @@ class Post extends Component {
   
   render() {
 
-    let deletePost= ""
   // delete post
-  if(this.props.profile.user_id = this.props.post.user_id){
-    deletePost = <div>
-      <button>Remove this Posting</button>
-    </div>
-  } else {
-    deletePost = <div></div>
-  }
+  //   let deletePost= ""
+
+  // if(this.props.profile.user_id = this.props.post.user_id){
+  //   deletePost = <div >
+  //     <button id="deleteButton">Remove this Posting</button>
+  //   </div>
+  // } else {
+  //   deletePost = <div>Login to remove this post</div>
+  // }
 
     return (
       <div>
@@ -34,11 +35,13 @@ class Post extends Component {
             <Link to={`/chatroom/${this.props.match.params.id}/${this.props.profile.user_id}`}>
                <div className="replybutton">Message Farmer about this post</div>
             </Link>
-            <div>{this.props.post.description}</div>
-            <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
             <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
+            <div>${this.props.post.price}</div>
+            <div>{this.props.post.zipcode}</div>
+            <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
+            <div>{this.props.post.description}</div>
           </div>
-          {deletePost}
+          
         </div>
       </div>
     )
