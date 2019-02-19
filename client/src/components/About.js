@@ -38,14 +38,14 @@ class About extends Component {
             <div>
                 <h2>Our Developers</h2>
                 <div>
-                    <img alt="nopicyet" src=""/>
+                    <img className="aboutUsPic"  src="https://scontent.flas1-1.fna.fbcdn.net/v/t1.0-9/50422642_3115736975119030_3352768045259948032_o.jpg?_nc_cat=104&_nc_ht=scontent.flas1-1.fna&oh=9dff77d2642e7f068fdf7761c9b79e7e&oe=5CDC5134"/>
                     <p>Connor Gordon</p>
                     <p>Junior developer, long history in horticulture, passion for stuff</p>
                 </div>
                 <div>
-                    <img alt="nopicyet" src=""/>
+                    <img className="aboutUsPic" src="https://media.licdn.com/dms/image/C5603AQHJKi7_vxqZJw/profile-displayphoto-shrink_200_200/0?e=1556150400&v=beta&t=m71_gBp2L2AYDrAquVUxRWes9Txo3ww5kcaNmU8_wa0"/>
                     <p>Sucely Chavarria</p>
-                    <p> Junior developer, </p>
+                    <p> Junior developer based out in Las Vegas, Nevada. </p>
                 </div>
             </div>
         </div>

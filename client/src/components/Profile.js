@@ -26,7 +26,7 @@ componentDidMount(){
         <div id="center">
             <h3 className="profileLi">{this.props.profile.username}</h3>
           <div className="profileDiv">
-            <img id="profileImg" alt="NoPic" src={this.props.profile.profile_pic}></img>
+            <img id="profileImg" src={this.props.profile.profile_pic} onError={(e)=>{e.target.onerror = null; e.target.src="http://fertilitynetworkuk.org/wp-content/uploads/2017/01/Facebook-no-profile-picture-icon-620x389.jpg"}}/>
           </div>
           <ul className="profileUl">
             <li ></li>
@@ -37,10 +37,10 @@ componentDidMount(){
           <div>
             <h3>Posts by this user:</h3>
             {/* use user_id to display all posts by this user, code below stolen from list.js as syntax example */}
-            <div>
+            <div className="profilegrid">
               {this.props.posts.map(item => (
                 <div key={item.id + "posts"} className="grid">
-                    <Link  className="gridLi" to={`/post/${item.id}`}> <img alt="noPic" className="gridImage" src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+                    <Link  to={`/post/${item.id}`}> <img alt="noPic" className="gridImage" src={item.photo}/><p className="ptitlePro">{item.title} (Las Vegas)</p> </Link> 
                 </div>
               ))}
             </div>

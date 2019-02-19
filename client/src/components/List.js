@@ -41,18 +41,16 @@ handleChange = e => {
 
     return (
 
-      <div className="listCon">
+      <div className="listCon ">
         <div className="bodyCon">
-          <h1 className="catname">{this.props.match.params.slug}</h1>
-          <div>
-            <button className="toggleButton" onClick={this.handleChange}><i className={Icon}></i></button>
-          </div>
-        </div> 
-        <div className={Main}>
-            <div className={Con}>
-                {this.props.posts.map(item => (
-                  <div key={item.id} className={Div}>
-                      <Link  className={Li} to={`/post/${item.id}`}> <img alt="noPic" className={Image} src={item.photo}/><p>{item.title} (Las Vegas)</p> </Link> 
+          <h1 className="catname">{this.props.match.params.slug}</h1> 
+          <div className="postbodyCon">
+                  <div className="addpostButtonCon"> 
+                      <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add a post to this category!</Link>
+                  </div>
+                  <div>
+                    <button id="switchButton" onClick={this.handleChange}><i className={Icon}></i> Switch View</button>
+
                   </div>
                 ))}
             </div>
@@ -61,6 +59,18 @@ handleChange = e => {
           <div className="postButtons"> 
             <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add a post to this category!</Link>  
           </div>
+          <div className={Main}>
+              <div className={Con}>
+                  {this.props.posts.map(item => (
+                    <div key={item.id} className={Div}>
+                       <Link  className={Li} to={`/post/${item.id}`}> <img className={Image} src={item.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn2.iconfinder.com/data/icons/orange-emoticon/512/Orange_Emoticon-03-512.png"}}/><p className="itemListName">{item.title} (Las Vegas)</p> </Link> 
+                       
+
+
+                    </div>
+                  ))}
+              </div>
+
           </div>
       </div>
     )
