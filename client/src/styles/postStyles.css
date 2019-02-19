@@ -14,20 +14,21 @@ html {box-sizing: border-box;}
     padding: 30px;
     margin: auto;
     background-color: rgba(195, 199, 199, 0.3);
-
     border-radius: 10px;
-    height: 50em;
 }
 
 
-.replybutton{
-    margin: 20px 0 20px 0;
+.replybutton {
     width: 340px;
+    margin: 0px 0px 20px 0px;
     background: rgb(123, 143, 230);
     border: 1px solid rgb(54, 29, 196);
     color: rgb(255, 255, 255);
     text-align: center
+}
 
+.descriptionCon {
+    margin-top: 20px;
 }
 
 .photo{

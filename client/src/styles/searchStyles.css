@@ -6,6 +6,13 @@ html {box-sizing: border-box;}
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.searchDiv2 {
+  height: 35em;
+}
+
+.searchDisplay {
+}
+
 #cropTrade {
   font-size: 3em;
   font-weight: bold;
@@ -31,7 +38,6 @@ html {box-sizing: border-box;}
   }
 
 .search:hover {
-  color: white;
   background-color: white;
   border-radius: 50px;
   border-color: white;
@@ -48,15 +54,14 @@ html {box-sizing: border-box;}
     list-style: none;   
     position: absolute;
     border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(114, 189, 68, .8);
     margin-top: 0px;
     overflow: scroll;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    width: 70%;
-    max-height: 50%;
+    max-height: 63%;
   }
 
 /* li */
@@ -83,6 +88,7 @@ html {box-sizing: border-box;}
     width: 30px;
     height: 30px;
   }
+
 
   .searchButton {
     color: darkslategray;
@@ -124,12 +130,22 @@ html {box-sizing: border-box;}
     #cropTrade {
       text-decoration: none;
       color: white;
+      font-size: 1.25em;
+      margin-right: 20px;
     }
 
     #cropTrade:hover {
       color: darkslategray;
-      font-size: 2.5em;
       transition: all 0.7s ease 0s;
+    }
+
+    #searchH2 {
+      text-align: center;
+      border: 2px solid darkslategray;
+      width: 20%;
+      margin: auto;
+      margin-top: 20px;
+      padding: 10px;
     }
 
 

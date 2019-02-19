@@ -26,7 +26,7 @@ componentDidMount(){
         <div id="center">
             <h3 className="profileLi">{this.props.profile.username}</h3>
           <div className="profileDiv">
-            <img id="profileImg" src={this.props.profile.profile_pic} onError={(e)=>{e.target.onerror = null; e.target.src="http://fertilitynetworkuk.org/wp-content/uploads/2017/01/Facebook-no-profile-picture-icon-620x389.jpg"}}/>
+            <img alt="noPic" id="profileImg" src={this.props.profile.profile_pic} onError={(e)=>{e.target.onerror = null; e.target.src="http://fertilitynetworkuk.org/wp-content/uploads/2017/01/Facebook-no-profile-picture-icon-620x389.jpg"}}/>
           </div>
           <ul className="profileUl">
             <li ></li>
@@ -40,7 +40,7 @@ componentDidMount(){
             <div className="profilegrid">
               {this.props.posts.map(item => (
                 <div key={item.id + "posts"} className="grid">
-                    <Link  to={`/post/${item.id}`}> <img alt="noPic" className="gridImage" src={item.photo}/><p className="ptitlePro">{item.title} (Las Vegas)</p> </Link> 
+                    <Link  to={`/post/${item.id}`}> <img alt="noPic" className="gridImage" src={item.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn2.iconfinder.com/data/icons/orange-emoticon/512/Orange_Emoticon-03-512.png"}}/><p className="ptitlePro">{item.title} (Las Vegas)</p> </Link> 
                 </div>
               ))}
             </div>

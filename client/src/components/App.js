@@ -6,7 +6,7 @@ import { Authentication } from '../lib/auth'
 
 
 
-
+import Thanks from './Thanks'
 import Home from './Home'
 import List from './List'
 import Post from './Post'
@@ -20,9 +20,9 @@ import ComingSoon from './ComingSoon'
 import ContactUs from './ContactUs'
 import Profile from './Profile'
 import Welcome from './Welcome'
+import SearchPage from './SearchPage'
 
 // import { withAuth } from '../lib/auth';
-import Chat from './Chat'
 import Footer from './Footer';
 
 class App extends Component {
@@ -35,13 +35,13 @@ class App extends Component {
             <Search />
             <Route exact path="/"  component={Welcome} />
             <Switch>
-
               <Route path="/Home" component={Home} />
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
-              <Route path="/chatroom/:receiver_id/:user_id" component={Chat} />
+              <Route path="/searchpage" component={SearchPage} />
               <Route path="/post/:id"  component={Post} />
+              <Route path="/thanks" component={Thanks} />
               <Route path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route path="/contactus"  component={ContactUs} />

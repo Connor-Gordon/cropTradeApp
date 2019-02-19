@@ -32,6 +32,10 @@ a{
     height: 50em;
 }
 
+.searchOptions {
+    display: flex;
+}
+
 .catName{
     font-size: 23px;
     color: rgb(82, 110, 6);
