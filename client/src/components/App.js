@@ -17,9 +17,11 @@ import Search from './Search'
 import SignIn from './SignIn'
 import Register from './Register'
 import ComingSoon from './ComingSoon'
+import Inbox from './Inbox'
 import ContactUs from './ContactUs'
 import Inbox from './Inbox'
 import Profile from './Profile'
+import Welcome from './Welcome'
 
 // import { withAuth } from '../lib/auth';
 import Chat from './Chat'
@@ -31,15 +33,18 @@ class App extends Component {
       <Authentication redirectUrl="/login">
       <Provider store={store}>
         <Router>
-          <div>
+          <div>              
             <Search />
+            <Route exact path="/"  component={Welcome} />
             <Switch>
-              <Route exact path="/"  component={Home} />
+
+              <Route path="/Home" component={Home} />
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
               <Route path="/chatroom/:receiver_id/:user_id" component={Chat} />
               <Route path="/post/:id"  component={Post} />
+              <Route path="/inbox/:user_id" component={Inbox} />
               <Route path="/posts/:slug/:id"  component={Scat} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route path="/contactus"  component={ContactUs} />

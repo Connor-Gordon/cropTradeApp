@@ -2,13 +2,7 @@ import axios from 'axios'
 import store from '../store'
 import { api} from '../lib/auth'
 
-
 axios.defaults.baseURL = '/api'
-
-const newChats = setInterval(() => {
-  getMessages()
-}, 5000)
-
 
 // notifcation of new message
 
@@ -33,7 +27,9 @@ export function getProfile(username) {
     })
 }
 
-// gets post for logged in profile
+
+// gets posts for logged in profile
+
 
 export function getMyPosts(username) {
     return axios.get('/profile/' + username).then( resp => {

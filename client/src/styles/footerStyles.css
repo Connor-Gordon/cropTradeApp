@@ -17,7 +17,7 @@
     text-decoration: none;
     color: darkslategray;
     text-transform: uppercase;
-    background-color: rgba(114, 189, 68, 0.7);
+    background-color: WHITE;
     padding: 10px;
     border: 2px solid darkslategray;
     border-radius: 4px;
@@ -26,7 +26,7 @@
 }
 
 .navName:hover {
-    color: white;
+    color: darkslategray;
     border-radius: 50px;
     border-color: white;
     transition: all 0.7s ease 0s;

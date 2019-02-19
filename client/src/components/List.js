@@ -50,7 +50,14 @@ handleChange = e => {
                   </div>
                   <div>
                     <button id="switchButton" onClick={this.handleChange}><i className={Icon}></i> Switch View</button>
+
                   </div>
+                ))}
+            </div>
+        </div>
+        <div className="bodyCon2">
+          <div className="postButtons"> 
+            <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add a post to this category!</Link>  
           </div>
           <div className={Main}>
               <div className={Con}>
@@ -63,10 +70,8 @@ handleChange = e => {
                     </div>
                   ))}
               </div>
+
           </div>
-        </div>
-        <div>
-        </div>
       </div>
     )
   }

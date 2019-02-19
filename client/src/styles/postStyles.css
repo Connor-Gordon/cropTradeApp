@@ -2,10 +2,8 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
 
 .postmainCon{
-    width: 800px;
     margin: auto;
     padding-top: 10px;
-    border: double grey;
     background-image: url(https://image.freepik.com/free-photo/abstract-color-clouds-sky-pastel-color-creative-colorful-color-background-abstract-gradation-color-pastel_6529-44.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,8 +14,9 @@ html {box-sizing: border-box;}
     padding: 30px;
     margin: auto;
     background-color: rgba(195, 199, 199, 0.3);
+
     border-radius: 10px;
-    
+    height: 50em;
 }
 
 
@@ -41,3 +40,15 @@ html {box-sizing: border-box;}
     color: blue
 }
 
+#singleCat {
+    border-bottom: 2px solid darkslategray;
+}
+
+#deleteButton {
+    margin: auto;
+}
+
+.postDiv {
+    max-height: 40em;
+    overflow: scroll;
+}

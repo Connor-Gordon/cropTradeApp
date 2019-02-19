@@ -15,11 +15,11 @@ class Post extends Component {
     return (
       <div className="listCon">
         <div className="postCon">         
-        <h1>{this.props.match.params.slug}</h1>
-        <div>{this.props.scat.map(allposts => (
-              <Link key={allposts.id} to={`/post/${allposts.id}`}><div> {allposts.title}</div> </Link>
-            ))}
-            </div>
+          <h1 id="singleCat">{this.props.match.params.slug}</h1>
+          <div className="postDiv">{this.props.scat.map(allposts => (
+                <Link key={allposts.id} to={`/post/${allposts.id}`}><div> {allposts.title}</div> </Link>
+              ))}
+          </div>
         </div>
       </div>
     )
