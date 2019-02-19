@@ -70,7 +70,7 @@ handleChange = e => {
                     </div>
                   ))}
               </div>
-
+                    </div>
           </div>
       </div>
     )

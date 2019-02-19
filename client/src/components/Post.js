@@ -37,14 +37,15 @@ class Post extends Component {
             </Link>
             <div className="descriptionCon">{this.props.post.description}</div>
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
+            <div>${this.props.post.price}</div>
+            <div>{this.props.post.zipcode}</div>
             <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
             <SimpleMap/>
 
-            <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
-            <div>${this.props.post.price}</div>
-            <div>{this.props.post.zipcode}</div>
+            {/* <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
+
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
-            <div>{this.props.post.description}</div>
+            <div>{this.props.post.description}</div> */}
 
           </div>
           
