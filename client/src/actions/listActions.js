@@ -30,6 +30,15 @@ export function getPosts(slug,id) {
 // })
 // }
 
+export function hidePost(id) {
+  return axios.put('/post/' + id).then(resp => {
+    store.dispatch({
+      type: "HIDE_POST",
+      payload: resp.data
+    })
+  })
+}
+
 
 export function getPost(id) {
   axios.get('/post/' + id).then(resp => {

@@ -2,49 +2,41 @@ html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;
 }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 a{
     text-decoration-color:rgb(151, 84, 6)
 }
 
 #catCon{
-    height: 600px;
-    padding-top: 85px;
+    padding-top: 5em;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-}
+    flex-basis: auto;
 
-.appTitle{
-    padding-top: 1px;
-    height: 60px;
-    text-align: center;
-    color: rgb(232, 240, 204);
-    background: rgb(110, 168, 72);
-    border-bottom:double rgb(79, 145, 89);
 }
 
 .superCon{
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 .mainCon{
     margin: auto;
-    border: double rgb(31, 100, 18);
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/92/17/2857e240b74eb0f.jpg);
-    min-height: 1000px;
+    background-image: url(https://images.unsplash.com/photo-1533499513792-8c4483a36c9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 50em;
 }
 
 .catName{
-    width: 130px;
-    height: 25px;
     font-size: 23px;
-    background: rgba(238, 229, 164, .5);
     color: rgb(82, 110, 6);
     text-align: center;
-    border-radius: 15px;
     text-decoration: rgb(187, 102, 6);
+    border-bottom: 2px solid darkslategray;
 }
 
 .subname{
@@ -55,10 +47,34 @@ a{
 
 .catdiv{
     margin: auto;
+    font-size: 17px;
+    text-decoration: none;
+    color: darkslategray;
+    text-transform: uppercase;
+    background: rgba(114, 189, 68, .95);
+    border: 2px solid darkslategray;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 5%;
+    text-align: center;
 }
 
 .CropTradeApp{
     font-size: 35px;
     margin: 0;
     padding-top: 10px;
+}
+
+#homeH2 {
+    width: 30%;
+    font-size: 3em;
+    color: darkslategray;
+    background-color: rgba(114, 189, 68, .95);
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    padding: 15px;
+    border: 2px solid darkslategray;
+    border-radius: 6px;
 }

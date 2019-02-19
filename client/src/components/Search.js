@@ -55,8 +55,9 @@ class Search extends Component {
 
     if (api.getProfile()){
         loginButton = <div>
-                        <Link className="searchButton" to={`/inbox/:user_id`}><i className="fa fa-inbox"></i> </Link>
-                        <Link className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
+                        <Link id="icon" className="searchButton" to={`/comingsoon`}><i className="fa fa-inbox"></i> </Link>
+                        <Link id="icon" className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
+
                         <Link className="searchButton" to={`/profile/${api.getProfile().username}`}>{api.getProfile().username}</Link>
                         <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
                         
@@ -73,7 +74,7 @@ class Search extends Component {
         
         <div>
         <form id="searchForm" onSubmit={this.handleSubmit}>
-            <div ><Link id="cropTrade" to={`/`}>CropTrade</Link></div>
+            <div ><Link id="cropTrade" to={`/home`}>CropTrade</Link></div>
             <div id="iconDiv">
                 <a target="blank"  className="icons" href="http://www.facebook.com"><i className="fa fa-facebook-square"></i></a> 
                 <a target="blank"  className="icons" href="http://www.twitter.com"><i className="fa fa-twitter-square"></i></a> 
@@ -82,7 +83,7 @@ class Search extends Component {
             <div>
                 {/* value from input will go to the state above, and on any change, run the handleChange fn to change the state and run the getSearch fn */}
                 <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
-                <button className="searchButton" type="submit">Submit</button>
+                <button id="sButton" className="searchButton" type="submit">Submit</button>
             </div>
             <div>
                 {/* refers to if else statement above */}

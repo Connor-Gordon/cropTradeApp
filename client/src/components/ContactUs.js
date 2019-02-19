@@ -20,7 +20,7 @@ class ContactUs extends Component {
                 <p>Las Vegas, NV, 89104</p>
             </div>
         </div>
-        <div>
+        <div id="formDiv">
           <h4>Send us a message!</h4>
           <form id="contactForm">
             <ul id="contactUl">

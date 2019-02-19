@@ -5,8 +5,23 @@ import '../styles/aboutStyles.css'
 
 
 class ComingSoon extends Component {
-  
+  state = {
+    selectedFile: null
+  }
+
+  fileSelectedHandler = e => {
+    console.log(e.target.files[0])
+    this.setState({
+      selectedFile: e.target.files[0]
+    })
+  }
+
+  fileUploadHandler = () => {
+
+  }
+
   render() {
+
     return (
       <div className=''>
         <div className="comingSoon">
