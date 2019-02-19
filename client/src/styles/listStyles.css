@@ -6,12 +6,10 @@ p{
 }
 
 .listCon {
-    margin:auto;
-    height: 50em;
    background-image: url(https://i.pinimg.com/originals/46/de/8f/46de8f846dad6f2755b4e4a85a11370a.png);
    background-size: cover;
    background-repeat: no-repeat;
-    border-radius: 10px;
+   margin-top: -21px;
 }
 .bodyCon{
     width: 745px;
@@ -91,13 +89,6 @@ h1{
     margin-right:5px;
 }
 
-.listiCon {
-    margin:auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-     border-radius: 10px;
-}
-
 #switchButton{
     background-color: rgb(54, 78, 79);
     color: white;
@@ -115,11 +106,7 @@ h1{
     border-radius: 10px;
     height: 35em;
     overflow: scroll;
-    border: 1px solid gray;
  }
-
-.list {
-}
 
  .listMain {
      background: none;

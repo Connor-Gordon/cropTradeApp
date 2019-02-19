@@ -17,21 +17,26 @@ class Home extends Component {
       <div className='superCon'>
 
         <div className="mainCon" >
-          <h2 id="homeH2">Search By Category</h2>
+          <div className="searchOptions">
+            <h2 id="homeH2">Category Search</h2>
+            <h2 id="homeH2"><Link to={'/searchpage'}>Keyword Search</Link> </h2>
+          </div>
+
           <div id="catCon">
             {this.props.categories.map(items=> (
-            <div className="catdiv" key={items.id}>
-              <Link to={`/posts/${items.slug}/${items.id}`}> <h2 className="catName">{items.name}</h2></Link>
-              <div>{items.subcat.map(allsubs => (
-                  <Link className="subname" key={allsubs.id} to={`/${allsubs.slug}/${allsubs.id}`}> <div className="allsubs">{allsubs.name}</div> </Link>
-                ))}
+              <div className="catdiv" key={items.id}>
+                <Link to={`/posts/${items.slug}/${items.id}`}> 
+                  <h2 className="catName">{items.name}</h2>
+                </Link>
+                <div>{items.subcat.map(allsubs => (
+                  <Link className="subname" key={allsubs.id} to={`/${allsubs.slug}/${allsubs.id}`}> 
+                    <div className="allsubs">{allsubs.name}</div>  
+                  </Link>
+                  ))}
+                </div>
               </div>
-            </div>
             ))}
           </div>
-          
-        </div>
-        <div>
         </div>
       </div>
     )

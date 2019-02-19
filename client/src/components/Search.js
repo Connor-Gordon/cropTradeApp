@@ -42,22 +42,15 @@ class Search extends Component {
   }
 
   render() {
-    // filter through the searchResults array, only display the ones with an index
-    let filteredSearchResults = this.props.searchResults.filter(
-        (searchResult) => {
-            return searchResult.title.indexOf(this.state.search) !== -1
-        }
-    )
-    
+
     // sets login/register buttons to toggle to display username/icons when signed in
     // tested w/o username by reversing if and else statements
     let loginButton = ""
 
     if (api.getProfile()){
         loginButton = <div>
-                        <Link id="icon" className="searchButton" to={`/comingsoon`}><i className="fa fa-inbox"></i> </Link>
+                        <Link id="icon" className="searchButton" to={`/inbox/:user_id`}><i className="fa fa-inbox"></i> </Link>
                         <Link id="icon" className="searchButton" to={`/comingsoon`}><i className="fa fa-cog"></i> </Link>
-
                         <Link className="searchButton" to={`/profile/${api.getProfile().username}`}>{api.getProfile().username}</Link>
                         <Link className="searchButton" to={`/`}><div onClick={this.logout}> Log out</div></Link>
                         
@@ -71,40 +64,18 @@ class Search extends Component {
     
     return (
       <div className='searchDiv'>
-        
-        <div>
         <form id="searchForm" onSubmit={this.handleSubmit}>
-            <div ><Link id="cropTrade" to={`/home`}>CropTrade</Link></div>
-            <div id="iconDiv">
+            <div id="iconDiv"><Link id="cropTrade" to={`/home`}>CropTrade</Link>
                 <a target="blank"  className="icons" href="http://www.facebook.com"><i className="fa fa-facebook-square"></i></a> 
                 <a target="blank"  className="icons" href="http://www.twitter.com"><i className="fa fa-twitter-square"></i></a> 
                 <a target="blank"  className="icons" href="http://www.instagram.com"><i className="fa fa-instagram"></i></a>
             </div>
-            <div>
-                {/* value from input will go to the state above, and on any change, run the handleChange fn to change the state and run the getSearch fn */}
-                <input className="search" type="text" placeholder="Search.." name="search" value={this.state.search} onChange={this.handleChange}/>
-                <button id="sButton" className="searchButton" type="submit">Submit</button>
-            </div>
+
             <div>
                 {/* refers to if else statement above */}
                 {loginButton}
             </div>
         </form>
-        </div>
-        <div className="searchDisplay">
-            <ul className="searchUL">
-                {filteredSearchResults.map(searchResult => (
-                    <li className="searchItems" key={searchResult + searchResult.id}>
-                        <Link className="searchLink" to={`/post/${searchResult.id}`}>
-                        <p className="searchP">{searchResult.title}</p>
-                        <p>{searchResult.zipcode}</p>
-                        <img alt="NoPic" className="searchPhoto" src={searchResult.photo}></img>
-                        </Link>
-                    </li>
-                
-            ))}
-            </ul>
-        </div>
       </div>
     )
   }

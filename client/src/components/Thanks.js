@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import '../styles/aboutStyles.css'
 
 
-class ContactUs extends Component {
+class Thanks extends Component {
 
   render() {
 
@@ -22,17 +21,8 @@ class ContactUs extends Component {
             </div>
         </div>
         <div id="formDiv">
-          <h4>Send us a message!</h4>
-          <form id="contactForm" onSubmit={this.handleSubmit}>
-            <ul id="contactUl">
-              <li><input className="contactInput" type="text" placeholder="Name"></input></li>
-              <li><input className="contactInput" type="text" placeholder="Email"></input></li>
-              <li><input className="contactInput" type="text" placeholder="Subject"></input></li>
-            </ul>
-            <input id="message" className="contactInput" type="textarea" placeholder="Message"></input>
-          </form>
-          <Link to={'/thanks'}><div id="contactSubmit">Submit</div></Link>
-          
+          <h4>Thank you!</h4><h4>We will get back to you as soon as possible!</h4>
+
         </div>
       </div>
     )
@@ -43,4 +33,4 @@ function mapStateToProps(appState) {
   return {
   }
 }
-export default connect(mapStateToProps)(ContactUs)
+export default connect(mapStateToProps)(Thanks)

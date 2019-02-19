@@ -45,15 +45,10 @@ handleChange = e => {
         <div className="bodyCon">
           <h1 className="catname">{this.props.match.params.slug}</h1> 
           <div className="postbodyCon">
-                  <div className="addpostButtonCon"> 
-                      <Link className="addpostButton" to={`/form/${this.props.match.params.slug}/${this.props.match.params.id}`}>Add a post to this category!</Link>
-                  </div>
-                  <div>
-                    <button id="switchButton" onClick={this.handleChange}><i className={Icon}></i> Switch View</button>
-
-                  </div>
-                ))}
+            <div>
+              <button id="switchButton" onClick={this.handleChange}><i className={Icon}></i> Switch View</button>
             </div>
+          </div>
         </div>
         <div className="bodyCon2">
           <div className="postButtons"> 
@@ -63,10 +58,7 @@ handleChange = e => {
               <div className={Con}>
                   {this.props.posts.map(item => (
                     <div key={item.id} className={Div}>
-                       <Link  className={Li} to={`/post/${item.id}`}> <img className={Image} src={item.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn2.iconfinder.com/data/icons/orange-emoticon/512/Orange_Emoticon-03-512.png"}}/><p className="itemListName">{item.title} (Las Vegas)</p> </Link> 
-                       
-
-
+                       <Link  className={Li} to={`/post/${item.id}`}> <img className={Image} alt="noPic" src={item.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn2.iconfinder.com/data/icons/orange-emoticon/512/Orange_Emoticon-03-512.png"}}/><p className="itemListName">{item.title} (Las Vegas)</p> </Link> 
                     </div>
                   ))}
               </div>
