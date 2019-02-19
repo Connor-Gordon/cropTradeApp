@@ -37,8 +37,6 @@ Router.get('/post/:id', (req, res, next) =>{
   })
 })
 
-// remove post
-
 Router.put('/post/:id', (req,res,next) => {
   let id = req.params.id
   const sql = `UPDATE posts SET is_active = 1 WHERE posts.id = ? `
@@ -54,6 +52,7 @@ Router.get('/posts/:category/:id', (req, res, next) =>{
   const sql = `select p.title, p.description, p.id, c.parent_id as parent_id
   from posts p 
   left join categories c ON p.cat_id = c.id
+
   where p.cat_id = ? or c.parent_id = ? AND p.is_active = 0
   ORDER BY p.time_created`
   conn.query (sql, [id, id], (err, results, fields) =>{
@@ -71,6 +70,7 @@ Router.get('/posts/:category/:id', (req, res, next) =>{
 Router.post('/form', (req, res, next)=>{
   const sql = 'INSERT INTO posts (photo, title, description, cat_id, fresh_by, price, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?)'
   const values = [req.body.photo, req.body.title, req.body.description, req.body.id, req.body.fresh_by, req.body.price, req.body.zipcode]
+
   conn.query(sql, values, (err, results, fields)=>{
     res.json({message: 'New Post Added'})
   })
@@ -103,7 +103,6 @@ Router.get('/profile/:username', (req, res, next) => {
     res.json(results)
   })
 })
-
 
 
 /////////// messaging //////////////////////////////////

@@ -8,8 +8,10 @@ const initialState = {
   export default function (state = initialState, action) {
     switch (action.type) {
       // add actions here
-      case 'ADD_MESSAGE':
-        return {...state, messages: [...state.messages, action.payload]}
+      case 'GET_NEW_MESSAGES':
+        return {...state, messages: action.payload}
+      case 'GET_MESSAGES':
+        return {...state, messages: action.payload}
       case 'GET_TOKEN':
         return {...state, token: action.payload}
       case "GET_PROFILE":

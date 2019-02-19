@@ -32,7 +32,7 @@ class Post extends Component {
         <div className="postmainCon"> 
           <div className="postCon">
             <div><h2>{this.props.post.title}</h2></div>
-            <Link to={`/chatroom/${this.props.match.params.id}/${this.props.profile.user_id}`}>
+            <Link to={`/chatroom/${this.props.post.user_id}/${this.props.profile.user_id}`}>
                <div className="replybutton">Message Farmer about this post</div>
             </Link>
             <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>

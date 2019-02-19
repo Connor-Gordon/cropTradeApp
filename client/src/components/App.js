@@ -19,6 +19,7 @@ import Register from './Register'
 import ComingSoon from './ComingSoon'
 import Inbox from './Inbox'
 import ContactUs from './ContactUs'
+import Inbox from './Inbox'
 import Profile from './Profile'
 import Welcome from './Welcome'
 
@@ -41,7 +42,7 @@ class App extends Component {
               <Route path="/login" component={SignIn} />
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
-              <Route path="/chatroom" component={Chat} />
+              <Route path="/chatroom/:receiver_id/:user_id" component={Chat} />
               <Route path="/post/:id"  component={Post} />
               <Route path="/inbox/:user_id" component={Inbox} />
               <Route path="/posts/:slug/:id"  component={Scat} />
@@ -49,6 +50,7 @@ class App extends Component {
               <Route path="/contactus"  component={ContactUs} />
               <Route path="/comingSoon" component={ComingSoon} />
               <Route path="/post/:id"  component={Post} />
+              <Route path="/inbox/:user_id" component={Inbox} />
               <Route path="/form/:slug/:id" component={Form} />
               <Route path="/profile/:username" component={Profile} />
               <Route path="/:slug/:id"  component={List} /> 

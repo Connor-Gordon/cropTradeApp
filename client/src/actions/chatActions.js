@@ -2,7 +2,6 @@ import axios from 'axios'
 import store from '../store'
 import { api} from '../lib/auth'
 
-
 axios.defaults.baseURL = '/api'
 
 // notifcation of new message
@@ -28,7 +27,9 @@ export function getProfile(username) {
     })
 }
 
+
 // gets posts for logged in profile
+
 
 export function getMyPosts(username) {
     return axios.get('/profile/' + username).then( resp => {
@@ -38,8 +39,6 @@ export function getMyPosts(username) {
         })
     })
 }
-
-
 
 ///////// messages ///////////////////
 
