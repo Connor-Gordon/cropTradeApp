@@ -17,8 +17,8 @@ html {box-sizing: border-box;}
 }
 
 .abouttitle{
-    padding-left: 360px;
     text-decoration: underline;
+    text-align: center;
 }
 
 .thespark{
