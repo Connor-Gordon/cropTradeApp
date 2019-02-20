@@ -38,8 +38,8 @@ class Post extends Component {
             <div ><a className="replybutton" href={mailto}>Click Here to Message Farmer about this post</a></div>
             <div className="descriptionCon">{this.props.post.description}</div>
             <div className="freshBy">FRESH BY: {this.props.post.fresh_by}</div>
-            <div>${this.props.post.price}</div>
-            <div>{this.props.post.zipcode}</div>
+            <div className="priceDiv">$: {this.props.post.price}</div>
+            <div className="zipDiv">zipcode: {this.props.post.zipcode}</div>
             <div><img alt="noPic" className="photo" src={this.props.post.photo}/></div>
             <SimpleMap/>
           </div>

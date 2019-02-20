@@ -11,6 +11,7 @@ html {box-sizing: border-box;}
 
 .postCon{
     width: 820px;
+    min-height: 50em;
     padding: 30px;
     margin: auto;
     background-color: rgba(195, 199, 199, 0.3);
@@ -36,7 +37,7 @@ html {box-sizing: border-box;}
     margin-bottom: 20px;
 }
 
-.freshBy{
+.freshBy, .zipDiv {
     margin:10px 0 10px 0;
     color: blue
 }
